@@ -1,3 +1,5 @@
+import About from "@/components/About"
+import Footer from "@/components/Footer"
 import Hero from "@/components/Hero"
 import Projects from "@/components/Projects"
 import { HiOutlineMenu } from "react-icons/hi"
@@ -19,8 +21,12 @@ const Home = () => {
 
       <main>
         <Hero />
-        <Projects />
+        <div className="flex flex-col gap-6 pt-6 rounded-t-xl bg-white relative z-[100]">
+          <About />
+          <Projects />
+        </div>
       </main>
+      <Footer />
     </>
   )
 }

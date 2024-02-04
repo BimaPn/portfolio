@@ -38,7 +38,7 @@ const Projects = () => {
         </div>
 
 
-        <div className="w-[90%] h-screen flex flex-col gap-4">
+        <div className="w-[90%] flex flex-col gap-4">
           <div className="w-full aspect-[16/10] relative">
             <Image src={`/person.jpg`} alt="project" fill className="object-cover rounded" /> 
           </div>

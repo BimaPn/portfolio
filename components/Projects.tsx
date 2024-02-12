@@ -3,50 +3,26 @@ import Link from "next/link"
 
 const Projects = () => {
   return (
-    <section className="boxWidth flex justify-between gap-8 my-16 relative">
-      <div className="w-[40%] h-fit flex flex-col gap-3 sticky top-[35%]">
-        <span className="font-semibold text-5xl">Featured Projects</span>
-        <span className="leading-[28px] text-lg">
+    <section className="boxWidth flex justify-between mt-5 relative">
+      <div className="w-[40%] h-fit flex flex-col gap-3 sticky top-[30%]">
+        <span className="font-semibold text-4xl">Featured Projects</span>
+        <span className="leading-[28px]">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum maiores quo laborum dolores vitae excepturi, consequuntur amet
         </span>
-        <Link href="/projects" className="font-semibold text-lg mt-1">Show more</Link>
+          <Link href={`/projects`} className="w-fit px-4 py-[7px] text-[15px] bg-black text-white font-semibold rounded-full mt-2">
+          Show More
+          </Link>
       </div>
 
-      <div className="w-1/2 flex flex-col items-center">
+      <div className="w-1/2 flex flex-col items-center gap-5 pl-3">
 
-        <div className="w-[90%] h-screen flex flex-col gap-4">
-          <div className="w-full aspect-[16/10] relative">
-            <Image src={`/person.jpg`} alt="project" fill className="object-cover rounded" /> 
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <span className="font-semibold text-2xl">Realtime Chat Application</span>
-            <span className="text-lg leading=[24px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, labore doloribus. A recusandae cupiditate vitae laudantium!</span>
-          </div>
+        <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-yellow-200">
         </div>
 
-
-        <div className="w-[90%] h-screen flex flex-col gap-4">
-          <div className="w-full aspect-[16/10] relative">
-            <Image src={`/person.jpg`} alt="project" fill className="object-cover rounded" /> 
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <span className="font-semibold text-2xl">Realtime Chat Application</span>
-            <span className="text-lg leading=[24px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, labore doloribus. A recusandae cupiditate vitae laudantium!</span>
-          </div>
+        <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-yellow-200">
         </div>
 
-
-        <div className="w-[90%] flex flex-col gap-4">
-          <div className="w-full aspect-[16/10] relative">
-            <Image src={`/person.jpg`} alt="project" fill className="object-cover rounded" /> 
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <span className="font-semibold text-2xl">Realtime Chat Application</span>
-            <span className="text-lg leading=[24px]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, labore doloribus. A recusandae cupiditate vitae laudantium!</span>
-          </div>
+        <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-yellow-200">
         </div>
 
       </div>

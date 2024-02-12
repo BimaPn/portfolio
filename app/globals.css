@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .boxWidth {
-  @apply max-w-[1920px] md:px-10 mx-auto
+  @apply max-w-[1280px] px-10 mx-auto
 }
 .flexCenter {
   @apply flex justify-center items-center

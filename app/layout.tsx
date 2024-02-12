@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={nunito.className}>{children}</body>
+      <body className={cabin.className}>{children}</body>
     </html>
   );
 }

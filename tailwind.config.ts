@@ -8,10 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      dropShadow: {
+        glow: [
+          "0 0px 60px rgba(255,255, 255, 0.35)",
+          "0 0px 105px rgba(255, 255,255, 0.2)"
+        ]
+      },
+      colors : {
+        dark : '#020413',
+        semiDark : '#03081D',
+        netral : '#081F47',
+        semiLight : '#1282A2',
+        light : '#6FFFE9',
       },
     },
   },

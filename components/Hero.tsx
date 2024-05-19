@@ -24,7 +24,7 @@ const Hero = () => {
   //   },
   // ]
   return (
-    <section className="boxWidth h-[80vh] flexCenter gap-5">
+    <section className="boxWidth h-[80vh] flexCenter gap-5 drop-shadow-glow">
       <div className="w-[65%] h-full rounded-3xl bg-slate-100  relative overflow-hidden">
         <div 
         className="absolute -top-12 blur-[90px] -right-32 w-[264px] aspect-square rounded-full bg-blue-300 z-0"/>

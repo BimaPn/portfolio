@@ -12,3 +12,7 @@
 .flexBetween {
   @apply flex justify-between items-center
 }
+.font-highlight {
+  font-family: var(--font-averia);
+}
+

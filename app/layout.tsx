@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Open_Sans, Nunito, Cabin, Overpass, Be_Vietnam_Pro, Lato, Poppins, Montserrat } from "next/font/google";
+import { Inter, Open_Sans, Nunito, Cabin, Overpass, Be_Vietnam_Pro, Lato, Poppins, Montserrat, Averia_Serif_Libre } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,6 +12,7 @@ const montserrat = Montserrat({
   weight:["400","500", "600", "700"],
   display:'swap'
 })
+const averia = Averia_Serif_Libre({subsets:["latin"], weight:["700"], variable: "--font-averia"})
 
 export const metadata: Metadata = {
   title: "Bima Putra",
@@ -25,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.className} bg-dark text-white`}>{children}</body>
+      <body className={`${openSans.className} ${averia.variable} bg-dark text-light`}>{children}</body>
     </html>
   );
 }

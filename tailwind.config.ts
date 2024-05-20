@@ -15,6 +15,7 @@ const config: Config = {
         ]
       },
       colors : {
+        primary : '#6B8AFD',
         dark : '#020413',
         semiDark : '#03081D',
         netral : '#081F47',

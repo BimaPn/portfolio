@@ -24,12 +24,12 @@ const Hero = () => {
   //   },
   // ]
   return (
-    <section className="boxWidth h-[80vh] flexCenter gap-5 drop-shadow-glow">
-      <div className="w-[65%] h-full rounded-3xl bg-slate-100  relative overflow-hidden">
+    <section className="boxWidth h-[80vh] flexCenter gap-5 text-white">
+      <div className="w-[65%] h-full rounded-3xl bg-semiDark  relative overflow-hidden">
         <div 
-        className="absolute -top-12 blur-[90px] -right-32 w-[264px] aspect-square rounded-full bg-blue-300 z-0"/>
+        className="absolute -top-12 blur-[90px] -right-32 w-[264px] aspect-square rounded-full bg-blue-700 z-0"/>
       <div 
-      className="absolute -bottom-24 blur-[90px] left-0 w-[234px] aspect-square rounded-full bg-yellow-300 z-0"/>
+      className="absolute -bottom-24 blur-[90px] left-0 w-[234px] aspect-square rounded-full bg-yellow-800 z-0"/>
 
         <div className="absolute top-0 left-0 flex flex-col justify-between w-full h-full z-[1] p-8">
 

@@ -1,9 +1,9 @@
 
 const ContactMe = () => {
   return (
-    <section className="boxWidth flexCenter border h-screen" >
-      <div className="text-center">
-        <span>Wanna get in touch or talk about a project?</span>
+    <section className="boxWidth flex" >
+      <div className="w-1/2">
+        <span className="font-bold text-[50px] text-white">Want to get in touch ?</span>
       </div>
 
     </section>

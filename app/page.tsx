@@ -21,7 +21,7 @@ const Home = () => {
             <div className="boxWidth flex flex-col gap-5">
               <div className="flex flex-col leading-[60px] font-bold text-[50px] tracking-tight text-white">
                 <span>Hallo Everyone 👋</span>
-                <span>I'm Software Engineer</span>
+                <span>I'm <span className="font-highlight italic text-[56px]">Software Engineer</span></span>
               </div>
               <div className="w-[35%]">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima neque non, debitis quasi asperiores ipsa, animi, cumque fuga nobis consequatur corrupti 
@@ -29,22 +29,14 @@ const Home = () => {
             </div>
           </div>
       </div>
+      <section className="mt-36">
+        <Projects />
+      </section>
+      <section className="mt-24">
+        <ContactMe />
+      </section>
 
       </main>
-
-      <footer className="boxWidth mt-5">
-       <section className="h-[384px] flexCenter gap-5 bg-red-200 rounded-3xl"></section>
-       <div className="flexBetween px-3 my-3">
-        <span className="text-[15px] font-semibold">Created By BimaP copyright@2024</span>
-        <ul className="flex items-center gap-6 text-[22px]">
-          {socialMedia.map((item) => (
-            <li key={item.link}>
-              {item.icon}
-            </li>
-          ))}
-        </ul>
-       </div>
-      </footer> 
     </>
   )
 }

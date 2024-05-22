@@ -1,65 +1,79 @@
-import Image from "next/image"
-import Link from "next/link"
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa"
-import { AiFillInstagram } from "react-icons/ai"
-import { socialMedia } from "@/constants/list"
+"use client"
+import { splitText } from "@/utils/string"
+import HeroModel from "./HeroModel"
+import { motion } from "framer-motion"
+
+const title = "Hi, I'm Bima 👋"
+const highlight = "Fullstack Developer"
+const description = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima neque non, debitis quasi asperiores ipsa, animi, cumque"
+
+const variants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 }
+}
 
 const Hero = () => {
-  // const socialMedia = [
-  //   {
-  //     icon: <FaFacebookF className="!text-[19px] -mt-[1px] -mr-[3px]" />,
-  //     link: "www.facebook.com"
-  //   },
-  //   {
-  //     icon: <AiFillInstagram className="!text-[25px]" />,
-  //     link: "www.facebook.com"
-  //   },
-  //   {
-  //     icon: <FaLinkedinIn />,
-  //     link: "www.facebook.com"
-  //   },
-  //   {
-  //     icon: <FaGithub/>,
-  //     link: "www.facebook.com"
-  //   },
-  // ]
   return (
-    <section className="boxWidth h-[80vh] flexCenter gap-5 text-white">
-      <div className="w-[65%] h-full rounded-3xl bg-semiDark  relative overflow-hidden">
-        <div 
-        className="absolute -top-12 blur-[90px] -right-32 w-[264px] aspect-square rounded-full bg-blue-700 z-0"/>
-      <div 
-      className="absolute -bottom-24 blur-[90px] left-0 w-[234px] aspect-square rounded-full bg-yellow-800 z-0"/>
+         <div className="w-full h-screen bg-semiDark relative">
+          <HeroModel />
+          <div className="w-full flexCenter absolute top-[18%] left-0 px-14">
+            <div className="boxWidth flex flex-col gap-5">
+              <div className="flex flex-col leading-[60px] font-bold text-[50px] tracking-tight">
 
-        <div className="absolute top-0 left-0 flex flex-col justify-between w-full h-full z-[1] p-8">
+                <motion.div initial="hidden" whileInView="show" transition={{ staggerChildren: 0.02 }}> 
+                  {splitText(title).map((char, index) => (
+                    <motion.span 
+                    transition={{ duration:0.7 }} 
+                    variants={variants} 
+                    key={index}
+                    >
+                    {char} 
+                    </motion.span>
+                  ))} 
+                </motion.div>
 
+                <motion.div initial="hidden" whileInView="show" transition={{ staggerChildren: .02 }}>
+                  {["A", " "].map((char) => (
+                    <motion.span 
+                    transition={{ duration:.7 }} 
+                    variants={variants} 
+                    key={char}
+                    >
+                    {char} 
+                    </motion.span>
+                  ))}
+                  {splitText(highlight).map((char, index) => (
+                    <motion.span 
+                    transition={{ duration:.7 }} 
+                    variants={variants} 
+                    key={index}
+                    className="text-white text-glow"
+                    >
+                    {char} 
+                    </motion.span>
+                  ))}
+                </motion.div>
 
-          <div className="w-[75%] flex flex-col gap-3">
-            <span className="text-4xl font-bold leading-[44px]">I Fuck Someone Who Are Web Developer & Designer</span>
-            <span className="leading-[28px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi et blanditiis dicta expedita, distinctio reprehenderit officiis omnis nostrum.</span>
-            <span>See my <Link href={`/projects`} className="font-medium">Portfolio</Link></span>
+              </div>
+              <motion.div
+              initial="hidden"
+              whileInView="show"
+              transition={{ staggerChildren: 0.01 }}
+              className="w-[35%] font-medium text-slate-400"
+              >
+                {splitText(description).map((char, index) => (
+                  <motion.span 
+                  transition={{ duration:0.1 }} 
+                  variants={variants} 
+                  key={index}
+                  >
+                  {char} 
+                  </motion.span>
+                ))} 
+              </motion.div>
+            </div>
           </div>
-
-        <div className="flex items-center gap-5">
-          <Link href={`/contact`} className="px-4 py-2 text-[15px] bg-black text-white font-semibold rounded-full">
-          Contact Me
-          </Link>
-          <ul className="flex items-center gap-6 text-[22px]">
-            {socialMedia.map((item) => (
-              <li key={item.link}>
-                {item.icon}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        </div>
-
-      </div>
-      <div className="w-[35%] h-full rounded-3xl bg-gray-200 relative overflow-hidden">
-        <Image src={`/person.jpg`} alt="profile picture" fill className="object-cover" />
-      </div>
-    </section>  
+      </div> 
   )
 }
 

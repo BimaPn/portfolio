@@ -17,5 +17,5 @@
 }
 
 .text-glow {
-  text-shadow: 0 0 10px #64748B, 0 0 20px #64748B, 0 0 30px #64748B, 0 0 40px #64748B;
+  text-shadow: 0 0 5px #64748B, 0 0 15px #64748B, 0 0 23px #64748B, 0 0 33px #64748B;
 }

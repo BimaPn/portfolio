@@ -16,3 +16,6 @@
   font-family: var(--font-averia);
 }
 
+.text-glow {
+  text-shadow: 0 0 10px #64748B, 0 0 20px #64748B, 0 0 30px #64748B, 0 0 40px #64748B;
+}

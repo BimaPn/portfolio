@@ -1,17 +1,22 @@
+import Image from "next/image"
 import Link from "next/link"
 
 const About = () => {
   return (
-    <section className="boxWidth flex items-center gap-5 mt-5 text-white">
-      <div className="w-[40%] flex flex-col gap-2">
-        <span className="text-[50px] font-bold italic">Who am I ?</span>
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt fugiat ratione blanditiis, pariatur quam saepe sunt praesentium impedit, quidem asperiores laborum id architecto, explicabo ipsum?</span>
-        <button className="w-fit text-black bg-white px-4 py-[6px] rounded-full font-medium mt-6 text-sm">Read more</button>
-      </div> 
+    <section className="boxWidth mt-5 text-white">
+      <span className="text-[50px] font-semibold">Fuck yeah Haha Yeah Fuck me Daddy</span>
+      <div className="flex justify-center gap-8 mt-2">
+        <div className="w-[50%] flex flex-col gap-2">
+          <span className="text-[50px] font-semibold ">Who am I ?</span>
+          <span className="leading-8 tracking-wide text-[17px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse unde molestiae perspiciatis quos reiciendis necessitatibus quia quae quibusdam, amet rem illo placeat obcaecati iusto molestias aut ipsum ratione consectetur porro alias. Magnam neque fugit mollitia aliquid quas amet ad suscipit.</span>
+        </div> 
+        <div className="w-fit">
+          <div className="w-[512px] aspect-[3/4] rounded-xl overflow-hidden relative">
+            <Image src={`/person.jpg`} className="object-cover" fill alt="me" />
+          </div>
+        </div> 
+      </div>
 
-      <div className="w-[50%] h-[45vh] bg-slate-200 rounded-3xl">
-
-      </div> 
     </section>
   )
 }

@@ -14,28 +14,25 @@ const Home = () => {
         <Navbar />
       </header>
 
-      <main className="h-[2000px]" >
+      <main >
       <div className="w-full h-screen relative">
           <RobotModel />
-          <div className="w-full flexCenter absolute top-[20%] left-0 px-14">
+          <div className="w-full flexCenter absolute top-[18%] left-0 px-14">
             <div className="boxWidth flex flex-col gap-5">
-              <div className="flex flex-col leading-[60px] font-bold text-[50px] tracking-tight text-white">
-                <span>Hallo Everyone 👋</span>
-                <span>I'm <span className="font-highlight italic text-[56px]">Software Engineer</span></span>
+              <div className="flex flex-col leading-[60px] font-bold text-[50px] tracking-tight">
+                <span>Hi, I'm Bima 👋</span>
+                <span>A <span className="text-white text-glow">Fullstack Developer</span></span>
               </div>
-              <div className="w-[35%]">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima neque non, debitis quasi asperiores ipsa, animi, cumque fuga nobis consequatur corrupti 
+              <div className="w-[35%] font-medium text-slate-400">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima neque non, debitis quasi asperiores ipsa, animi, cumque fuga nobis 
               </div>
             </div>
           </div>
       </div>
-      <section className="mt-36">
-        <Projects />
+      <section>
+      <Projects />
       </section>
-      <section className="mt-24">
-        <ContactMe />
-      </section>
-
+            <Footer />
       </main>
     </>
   )
@@ -44,4 +41,3 @@ const Home = () => {
 export default Home
 
 
-      // <div className="w-96 bg-gray-500/50 absolute top-0 left-1/2 aspect-square rounded-full blur-[120px]" />

@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.className} ${averia.variable} bg-dark text-light`}>{children}</body>
+      <body className={`${openSans.className} ${averia.variable} bg-dark text-slate-200`}>{children}</body>
     </html>
   );
 }

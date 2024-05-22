@@ -1,5 +1,4 @@
 "use client"
-
 import { Group, MeshStandardMaterial, Vector3 } from "three"
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
@@ -7,17 +6,17 @@ import { Environment, useGLTF, ContactShadows, useTexture } from '@react-three/d
 import { motion } from "framer-motion-3d"
 import { videoElement, videos } from "@/constants/videos"
 
-function Model({isOpen, videoIndex}:{isOpen:boolean, videoIndex: number}) {
+const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
   const group = useRef<Group>(null)
   const { nodes, materials } = useGLTF('/laptop2.glb') as any
   const image = useTexture("/image.png")
   const customMaterial = new MeshStandardMaterial({ map: image })
 
   return (
-    <group ref={group} dispose={null} position={[-3,-1,0]} rotation={[.1,.2,0]}>
+    <group ref={group} dispose={null} position={[-0.7,-2,0]} rotation={[.2,.1,0]}>
       <motion.group 
       initial={{ rotateY: 0, rotateZ: 0, rotateX: 0 }}
-      animate={{ rotateX: isOpen ? 0 : 1.58, transition:{duration:.7, type: "spring", bounce:0} }}
+      animate={{ rotateX: 0 , transition:{duration:.7, type: "spring", bounce:0} }}
       position={[0, -0.04, 0.41]}
       >
         <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
@@ -25,7 +24,7 @@ function Model({isOpen, videoIndex}:{isOpen:boolean, videoIndex: number}) {
           <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
           <mesh geometry={nodes['Cube008_2'].geometry}> 
             <meshBasicMaterial> 
-              <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[videoIndex])]}/>
+              <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[currentVideo-1])]}/>
             </meshBasicMaterial>
           </mesh>
         </group>
@@ -40,7 +39,7 @@ function Model({isOpen, videoIndex}:{isOpen:boolean, videoIndex: number}) {
   )
 }
 
-const Rig = () => {
+export const Rig = () => {
   const { camera, mouse } = useThree()
   const vec = new Vector3()
 
@@ -49,30 +48,5 @@ const Rig = () => {
     camera.lookAt(0, 0, 0)
   })
 }
-const page = () => {
-  const [isOpen, setIsOpen] = useState(true)
-  const [videoIndex, setVideoIndex] = useState(0)
-  return (
-    <div className="h-screen flexCenter text-black">
-        <Canvas camera={{ position: [20, 100, -25], fov: 35 }} className="w-1/2">
-        <Suspense fallback={null}>
-          <group rotation={[0, Math.PI, 0]} >
-            <Model isOpen={isOpen} videoIndex={videoIndex} />
-          </group>
-          <Environment preset="city" />
-        </Suspense>
-        <Rig />
-      </Canvas>
-      <div className="w-1/2 flex flex-col items-start">
-        <span>fuck you</span>
-        <button className="font-bold text-5xl" onClick={() => setIsOpen((prev) => !prev)} >Click</button>
-        {[0, 1, 2].map((item) => (
-          <button key={item} onClick={() => setVideoIndex(item)}>video {item}</button>
-        ))}
-      </div>
 
-    </div>
-  )
-}
-
-export default page
+export default Laptop3D

@@ -29,7 +29,7 @@ const Footer = () => {
     variants={parentVariant}
     initial="hidden"
     whileInView="show"
-    className="-mt-20 relative"
+    className=" relative"
     >
       <motion.div variants={parentVariant} transition={{ delay: 1 }} className="w-full">
         <Spline scene="https://prod.spline.design/Cy04erwI2vDlOuEr/scene.splinecode" />
@@ -64,7 +64,7 @@ const Footer = () => {
                     </motion.span>
                   ))} 
                 </motion.div>
-            <Link href={`/contact`} > 
+            <Link href={`/contact`} className="pointer-events-auto hover:scale-105 transition-transform origin-left"> 
               <motion.div className="font-medium mt-2 text-glow-sm text-white" variants={parentVariant} transition={{ staggerChildren: 0.07 }}> 
                 {splitText("👉 Message me 👈").map((char, index) => (
                   <motion.span 

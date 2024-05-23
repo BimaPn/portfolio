@@ -23,6 +23,16 @@ const config: Config = {
         light : '#6FFFE9',
       },
     },
+    screens : {
+      ssm : "352px",
+      xs : "480px",
+      ss : "556px",
+      sm : "768px",
+      md : "1024px",
+      lg : "1280px",
+      xl : "1440px",
+      xxl : "1700px"
+    }
   },
   plugins: [],
 };

@@ -12,7 +12,6 @@ const Home = () => {
       </header>
       <main >
         <Hero />
-        <Footer />
       </main>
     </>
   )

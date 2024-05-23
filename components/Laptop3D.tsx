@@ -1,8 +1,8 @@
 "use client"
-import { Group, MeshStandardMaterial, Vector3 } from "three"
-import React, { Suspense, useEffect, useRef, useState } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Environment, useGLTF, ContactShadows, useTexture } from '@react-three/drei'
+import {  Vector3 } from "three"
+import { Suspense, useState } from 'react'
+import {  useFrame, useThree } from '@react-three/fiber'
+import { Environment, useGLTF } from '@react-three/drei'
 import { motion } from "framer-motion-3d"
 import { videoElement, videos } from "@/constants/videos"
 
@@ -17,21 +17,15 @@ const screenVariant = {
 }
 
 const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
-  const { nodes, materials } = useGLTF('/laptop2.glb') as any
-  const image = useTexture("/image.png")
-  const customMaterial = new MeshStandardMaterial({ map: image })
+  const { nodes, materials } = useGLTF('/laptop3.glb') as any
 
   return (
     <motion.group
     dispose={null}
-    initial="hidden"
-    animate="show"
     variants={parentVariant}
     rotation={[.08,.02,0]}>
-      <motion.group 
 
-    initial="hidden"
-    animate="show"
+      <motion.group 
       variants={screenVariant}
       position={[0, -0.04, 0.41]}
       >

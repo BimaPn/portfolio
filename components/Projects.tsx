@@ -14,7 +14,7 @@ const variants = {
 }
 
 export const viewport = {
-  margin: "0% 0% -90% 0%"  
+  margin: "0% 0% -80% 0%"  
 }
 export const parentVariant = {
   show: { opacity:1 },

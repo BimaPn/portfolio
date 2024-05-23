@@ -8,6 +8,8 @@ const LaptopPreview = ({currentProject}:{currentProject: number}) => {
   return (
    <Canvas camera={{ position: [0, 12, -23], fov: 35 }}>
     <Suspense fallback={null}>
+
+    <pointLight position={[-4, 3, 1]} color={"#6B8AFD"} intensity={100} />
       <group rotation={[0, Math.PI, 0]} >
         <Laptop3D currentVideo={currentProject} />
       </group>

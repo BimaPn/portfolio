@@ -11,7 +11,7 @@ const Home = () => {
         <Navbar />
       </header>
       <main >
-        <Footer />
+        <Projects />
       </main>
     </>
   )

@@ -8,7 +8,7 @@ import { videoElement, videos } from "@/constants/videos"
 
 
 const parentVariant = {
-  hidden: {x:-0.7, y: -3.5, z: 0},
+  hidden: {x:-0.2, y: -3.5, z: 0},
   show: {y:-2, transition:{duration:1.5, type: "spring", bounce:0}}
 }
 const screenVariant = {
@@ -24,9 +24,14 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
   return (
     <motion.group
     dispose={null}
+    initial="hidden"
+    animate="show"
     variants={parentVariant}
     rotation={[.08,.02,0]}>
       <motion.group 
+
+    initial="hidden"
+    animate="show"
       variants={screenVariant}
       position={[0, -0.04, 0.41]}
       >

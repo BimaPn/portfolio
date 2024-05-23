@@ -6,17 +6,28 @@ import { Environment, useGLTF, ContactShadows, useTexture } from '@react-three/d
 import { motion } from "framer-motion-3d"
 import { videoElement, videos } from "@/constants/videos"
 
+
+const parentVariant = {
+  hidden: {x:-0.7, y: -3.5, z: 0},
+  show: {y:-2, transition:{duration:1.5, type: "spring", bounce:0}}
+}
+const screenVariant = {
+ hidden: {rotateY: 0, rotateZ: 0, rotateX: 1.59},
+ show: {rotateX: 0, transition:{duration:1.5, type: "spring", bounce:0}}
+}
+
 const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
-  const group = useRef<Group>(null)
   const { nodes, materials } = useGLTF('/laptop2.glb') as any
   const image = useTexture("/image.png")
   const customMaterial = new MeshStandardMaterial({ map: image })
 
   return (
-    <group ref={group} dispose={null} position={[-0.7,-2,0]} rotation={[.2,.1,0]}>
+    <motion.group
+    dispose={null}
+    variants={parentVariant}
+    rotation={[.08,.02,0]}>
       <motion.group 
-      initial={{ rotateY: 0, rotateZ: 0, rotateX: 0 }}
-      animate={{ rotateX: 0 , transition:{duration:.7, type: "spring", bounce:0} }}
+      variants={screenVariant}
       position={[0, -0.04, 0.41]}
       >
         <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
@@ -35,7 +46,7 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
         <mesh material={materials.trackpad} geometry={nodes['Cube002_1'].geometry} />
       </group>
       <mesh material={materials.touchbar} geometry={nodes.touchbar.geometry} position={[0, -0.03, 1.2]} />
-    </group>
+    </motion.group>
   )
 }
 

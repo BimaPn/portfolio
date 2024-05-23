@@ -20,7 +20,7 @@ const Hero = () => {
             <div className="boxWidth flex flex-col gap-5">
               <div className="flex flex-col leading-[60px] font-bold text-[50px] tracking-tight">
 
-                <motion.div initial="hidden" whileInView="show" transition={{ staggerChildren: 0.02 }}> 
+                <motion.div initial="hidden" animate="show" transition={{ staggerChildren: 0.02 }}> 
                   {splitText(title).map((char, index) => (
                     <motion.span 
                     transition={{ duration:0.7 }} 
@@ -32,7 +32,7 @@ const Hero = () => {
                   ))} 
                 </motion.div>
 
-                <motion.div initial="hidden" whileInView="show" transition={{ staggerChildren: .02 }}>
+                <motion.div initial="hidden" animate="show" transition={{ staggerChildren: .02 }}>
                   {["A", " "].map((char) => (
                     <motion.span 
                     transition={{ duration:.7 }} 
@@ -47,7 +47,7 @@ const Hero = () => {
                     transition={{ duration:.7 }} 
                     variants={variants} 
                     key={index}
-                    className="text-white text-glow"
+                    className="text-white text-glow-lg"
                     >
                     {char} 
                     </motion.span>
@@ -57,7 +57,7 @@ const Hero = () => {
               </div>
               <motion.div
               initial="hidden"
-              whileInView="show"
+              animate="show"
               transition={{ staggerChildren: 0.01 }}
               className="w-[35%] font-medium text-slate-400"
               >

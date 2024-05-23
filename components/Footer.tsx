@@ -29,20 +29,20 @@ const Footer = () => {
     variants={parentVariant}
     initial="hidden"
     whileInView="show"
-    className=" relative"
+    className="w-full h-screen relative"
     >
-      <motion.div variants={parentVariant} transition={{ delay: 1 }} className="w-full">
-        <Spline scene="https://prod.spline.design/Cy04erwI2vDlOuEr/scene.splinecode" />
+      <motion.div variants={parentVariant} transition={{ delay: 1 }} className="w-full h-full flexCenter">
+       <Spline scene="https://prod.spline.design/Cy04erwI2vDlOuEr/scene.splinecode" />
       </motion.div>
       
       <div className="absolute bottom-0 left-0 right-0 flexCenter py-5 font-medium text-slate-400 text-[15px]">
         <span>© 2024 <Link href={`/about`} className="text-white">Bima PN</Link>. Made with love ❤️</span>
       </div>
 
-      <div className="absolute inset-0 flexCenter pointer-events-none">
-        <div className="boxWidth">
-          <div className="w-[40%] flex flex-col gap-3">
-                <motion.div className="font-bold text-white text-[52px]" variants={parentVariant} transition={{ staggerChildren: 0.04 }}> 
+      <div className="absolute inset-0 flex justify-center items-start sm:items-center pointer-events-none">
+        <div className="boxWidth px-4 xs:px-6 sm:px-8 py-24 sm:py-0 text-center sm:text-start">
+          <div className="w-full flex flex-col gap-3">
+                <motion.div className="font-bold text-white text-[35px] xs:text-[40px] sm:text-[44px] md:text-[50px]" variants={parentVariant} transition={{ staggerChildren: 0.04 }}> 
                   {splitText(title).map((char, index) => (
                     <motion.span 
                     transition={{ duration:0.7 }} 
@@ -53,7 +53,7 @@ const Footer = () => {
                     </motion.span>
                   ))} 
                 </motion.div>
-                <motion.div className="font-medium" variants={parentVariant} transition={{ staggerChildren: 0.01 }}> 
+                <motion.div className="w-full xs:w-[70%] sm:w-[60%] md:w-[40%] font-medium mx-auto sm:mx-0" variants={parentVariant} transition={{ staggerChildren: 0.01 }}> 
                   {splitText(description).map((char, index) => (
                     <motion.span 
                     transition={{ duration:0.1 }} 

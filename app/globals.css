@@ -13,7 +13,7 @@
   @apply flex justify-between items-center
 }
 .font-highlight {
-  font-family: var(--font-averia);
+  font-family: var(--font-bitter);
 }
 
 .text-glow-lg {
@@ -21,4 +21,7 @@
 }
 .text-glow-sm {
   text-shadow: 0 0 2px #64748B, 0 0 6px #64748B, 0 0 10px #64748B, 0 0 14px #64748B;
+}
+.svg-glow {
+  filter: drop-shadow(18px 18px 18px #64748B);
 }

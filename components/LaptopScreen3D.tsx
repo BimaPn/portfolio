@@ -8,7 +8,7 @@ import { videoElement, videos } from "@/constants/videos"
 
 
 const parentVariant = {
-  hidden: {x:-0.2, y: -3.5, z: 1},
+  hidden: {x:0, y: -3.5, z: 8.2},
   show: {y:-2, transition:{duration:1.5, type: "spring", bounce:0}}
 }
 const screenVariant = {
@@ -16,17 +16,21 @@ const screenVariant = {
  show: {rotateX: 0, transition:{duration:1.5, type: "spring", bounce:0}}
 }
 
-const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
+const LaptopScreen3D = ({currentVideo=1}:{currentVideo: number}) => {
   const { nodes, materials } = useGLTF('/laptop3.glb') as any
 
   return (
     <motion.group
     dispose={null}
+    initial="hidden"
+    animate="show"
     variants={parentVariant}
-    rotation={[.08,.02,0]}>
+    rotation={[0.05,.02,0]}>
 
       <motion.group 
       variants={screenVariant}
+      initial="hidden"
+      animate="show"
       position={[0, -0.04, 0.41]}
       >
         <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
@@ -49,14 +53,5 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
   )
 }
 
-export const Rig = () => {
-  const { camera, mouse } = useThree()
-  const vec = new Vector3()
 
-  return useFrame(() => {
-    camera.position.lerp(vec.set(mouse.x/5, -mouse.y/5, camera.position.z), .1)
-    camera.lookAt(0, 0, 0)
-  })
-}
-
-export default Laptop3D
+export default LaptopScreen3D

@@ -24,14 +24,14 @@ export const parentVariant = {
   hidden: {opacity:0}
 }
 
-const Footer = () => {
+const Footer = ({className}:{className?: string}) => {
   return (
     <motion.section
     viewport={viewport}
     variants={parentVariant}
     initial="hidden"
     whileInView="show"
-    className="w-full h-screen -mt-10 relative"
+    className={`w-full h-screen -mt-10 relative ${className}`}
     >
       <motion.div variants={parentVariant} transition={{ delay: 1 }} className="w-full h-full flexCenter">
        <Spline scene="https://prod.spline.design/Cy04erwI2vDlOuEr/scene.splinecode" />

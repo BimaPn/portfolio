@@ -46,7 +46,7 @@ const Hero = () => {
                     transition={{ duration:.7 }} 
                     variants={variants} 
                     key={index}
-                    className="text-white text-glow-lg"
+                    className="text-white text-glow-lg font-highlight"
                     >
                     {char} 
                     </motion.span>

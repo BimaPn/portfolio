@@ -76,7 +76,7 @@ const Projects = () => {
                     <motion.a
                     href={`/projects/${project.slug}`}
                     className={`${project.id === currentProject ? "text-white text-glow-sm" : "text-slate-500"}
-                    text-2xl xs:text-[28px] sm:text-xl lg:text-3xl font-semibold origin-left`}
+                    text-2xl xs:text-[28px] sm:text-xl lg:text-3xl font-semibold origin-left font-highlight`}
                     animate={{
                       scale: project.id === currentProject ? 1.1 : 1,
                       color: project.id === currentProject ? "white" : "#64748B",

@@ -12,6 +12,7 @@ const Home = () => {
       </header>
       <main >
         <Hero />
+        <Projects />
         <Footer />
       </main>
     </>

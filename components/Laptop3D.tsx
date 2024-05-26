@@ -1,29 +1,32 @@
 "use client"
 import {  Vector3 } from "three"
-import { Suspense, useState } from 'react'
 import {  useFrame, useThree } from '@react-three/fiber'
 import { Environment, useGLTF } from '@react-three/drei'
 import { motion } from "framer-motion-3d"
 import { videoElement, videos } from "@/constants/videos"
+import { useEffect } from "react"
 
 
 const parentVariant = {
-  hidden: {x:-0.2, y: -3.5, z: 1},
+  hidden: {x:0, y: -3.5, z: 1},
   show: {y:-2, transition:{duration:1.5, type: "spring", bounce:0}}
 }
 const screenVariant = {
  hidden: {rotateY: 0, rotateZ: 0, rotateX: 1.59},
- show: {rotateX: 0, transition:{duration:1.5, type: "spring", bounce:0}}
+ show: {rotateX: -.2, transition:{duration:1.5, type: "spring", bounce:0}}
 }
 
 const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
   const { nodes, materials } = useGLTF('/laptop3.glb') as any
+  useEffect(() => {
+    console.log("rerender")
+    },[])
 
   return (
     <motion.group
     dispose={null}
     variants={parentVariant}
-    rotation={[.08,.02,0]}>
+    rotation={[.17,0,0]}>
 
       <motion.group 
       variants={screenVariant}
@@ -34,7 +37,10 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
           <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
           <mesh geometry={nodes['Cube008_2'].geometry}> 
             <meshBasicMaterial> 
-              <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[currentVideo-1])]}/>
+              {currentVideo === 1 && <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[0])]}/>}
+              {currentVideo === 2 && <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[1])]}/>}
+              {currentVideo === 3 && <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[2])]}/>}
+              {currentVideo === 4 && <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[3])]}/>}
             </meshBasicMaterial>
           </mesh>
         </group>

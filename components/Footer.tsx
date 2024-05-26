@@ -31,7 +31,7 @@ const Footer = ({className}:{className?: string}) => {
     variants={parentVariant}
     initial="hidden"
     whileInView="show"
-    className={`w-full h-screen -mt-10 relative ${className}`}
+    className={`w-full h-screen -mt-10 relative z-[1] ${className}`}
     >
       <motion.div variants={parentVariant} transition={{ delay: 1 }} className="w-full h-full flexCenter">
        <Spline scene="https://prod.spline.design/Cy04erwI2vDlOuEr/scene.splinecode" />

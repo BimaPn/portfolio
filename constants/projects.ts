@@ -1,3 +1,4 @@
+export const  colors = ["#172554","#052E16","#3B0764","#083344"]
 export const projects = [
   {
     id: 1,

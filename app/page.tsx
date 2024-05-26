@@ -10,10 +10,12 @@ const Home = () => {
       <header className="fixed top-0 left-0 right-0 z-50 py-4" >
         <Navbar />
       </header>
-      <main >
+      <main className="relative z-[1]">
         <Hero />
         <Projects />
-        <Footer />
+        <div className="w-full h-screen sm:h-[75vh] overflow-hidden flex items-end">
+          <Footer />
+        </div>
       </main>
     </>
   )

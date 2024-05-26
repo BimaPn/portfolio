@@ -1,5 +1,5 @@
 "use client"
-import { projects } from "@/constants/projects"
+import { colors, projects } from "@/constants/projects"
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
@@ -7,12 +7,12 @@ import { useRef, useState } from "react"
 import { PiArrowRightBold } from "react-icons/pi"
 import { splitText } from "@/utils/string"
 import LaptopPreview from "./LaptopPreview"
+import FollowCursor from "./FollowCursor"
 
 const variants = {
   hidden: {y:300, opacity: 0},
   show: {y:0, opacity: 1}
 }
-
 export const viewport = {
   margin: "0% 0% -80% 0%"  
 }
@@ -26,6 +26,7 @@ const Projects = () => {
   const { scrollYProgress } = useScroll({
     target: containerRef
   });
+
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if(latest <= 0.25) {
       setCurrentProject(1)
@@ -37,27 +38,46 @@ const Projects = () => {
       setCurrentProject(4)
     }
   })
+
+  const bgVariant = {
+    hidden: { 
+      opacity: 0,
+      transition: {delay:.7}
+    },
+    show: {
+      opacity: 1,
+
+    },
+    color: {
+      backgroundColor: colors[currentProject-1]
+    }
+  }
   return (
+  <> 
+  <FollowCursor color={colors[currentProject-1]} />
+  <div className="-mt-12 sm:py-24">
     <motion.div 
     ref={containerRef}
     viewport={viewport}
     variants={parentVariant}
     initial="hidden"
     whileInView="show" 
-    className="w-full xl:w-[1440px] h-[350vh] relative mx-auto px-3 xs:px-6 sm:px-8"
+    id="projects"
+    className="w-full h-[350vh] relative z-[6] px-3 xs:px-6 sm:px-8"
     >
-
-      <div className="w-full h-screen sticky top-0 flex flex-col sm:flex-row items-center justify-between">
+      <div className="w-full xl:w-[1440px] mx-auto h-screen sticky top-0 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-5 sm:gap-2">
       
-        <div className="w-full sm:w-[60%] xl:w-[70%] h-1/2 xs:h-screen flexCenter gap-3 overflow-hidden">
-          <div className="w-full h-[52vh] xs:h-[65vh] ssi:h-[80vh] sm:h-fit sm:aspect-[1/1.1] xl:aspect-auto xl:h-full">
+        <div className="w-full sm:w-[60%] xl:w-[70%] flexCenter gap-3 relative">
+          <motion.div variants={bgVariant} animate="color" className="absolute top-[6%] left-[6%] w-[85%] aspect-[4/3] rounded-full blur-[90px]"/>
+          <div className="w-full h-fit aspect-[4/3]">
           <LaptopPreview currentProject={currentProject} />
           </div>
         </div>
 
-        <div className="w-full sm:w-[40%] flexCenter px-3 py-4 -translate-y-[84px] xs:-translate-y-[40px] sm:translate-y-0 sm:mt-0">
+        <div className="w-full sm:w-[40%] flexCenter px-3 py-4">
           <div className="flex flex-col">
-            <motion.div variants={parentVariant} className="text-sm xs:text-base sm:text-sm md:text-base" transition={{ staggerChildren: 0.02 }}> 
+            <motion.div 
+            variants={parentVariant} className="text-sm xs:text-base sm:text-sm md:text-base" transition={{ staggerChildren: 0.02 }}> 
               {splitText("Selected project 🤓 🖥️").map((char, index) => (
                 <motion.span 
                 transition={{ duration:0.7 }} 
@@ -71,18 +91,24 @@ const Projects = () => {
             </motion.div>
             <motion.div variants={parentVariant} transition={{ staggerChildren:.05 }} className="flex flex-col">
               {projects.map((project) => (
-                <motion.div key={project.id} variants={variants} transition={{ duration: .7 }} className={`flex flex-col gap-[10px] py-3 lg:py-5`}>
+                <motion.div 
+                key={project.id} 
+                variants={variants}
+                transition={{ duration: .7 }}
+                className={`flex flex-col gap-[10px] py-3 lg:py-5`}
+                >
                   <div className="flexBetween"> 
-                    <motion.a
-                    href={`/projects/${project.slug}`}
-                    className={`${project.id === currentProject ? "text-white text-glow-sm" : "text-slate-500"}
-                    text-2xl xs:text-[28px] sm:text-xl lg:text-3xl font-semibold origin-left font-highlight`}
-                    animate={{
-                      scale: project.id === currentProject ? 1.1 : 1,
-                      color: project.id === currentProject ? "white" : "#64748B",
-                      transition: { duration: .3, bounce: 0 }
-                      }}
-                    >{project.title}</motion.a>
+                    <Link href={`/projects/${project.slug}`}> 
+                      <motion.span
+                      className={`${project.id === currentProject ? "text-white text-glow-sm" : "text-slate-500"}
+                      text-2xl xs:text-[28px] sm:text-xl lg:text-3xl font-semibold origin-left font-highlight`}
+                      animate={{
+                        scale: project.id === currentProject ? 1.1 : 1,
+                        transition: { duration: .3, bounce: 0 }
+                        }}
+                      >{project.title}</motion.span>
+                    </Link>
+
                       {project.id === currentProject && (
                         <div className="w-7 aspect-square flexCenter overflow-hidden">
                           <motion.div
@@ -109,10 +135,10 @@ const Projects = () => {
             </motion.div>
           </div>
         </div>
-
       </div>
-
     </motion.div>
+  </div>
+  </>
   )
 }
 

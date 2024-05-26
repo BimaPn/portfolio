@@ -21,7 +21,8 @@ const FollowCursor = () => {
 
   const variant = {
     initial: {
-      opacity: 0 
+      opacity: 0,
+      x: -200
     },
     default: {
       opacity: 1,
@@ -38,7 +39,7 @@ const FollowCursor = () => {
     variants={variant}
     initial="initial"
     animate="default"
-    className="w-64 aspect-square rounded-full bg-netral blur-[90px] fixed top-0 left-0 pointer-events-none sm:block hidden"
+    className="w-64 aspect-square rounded-full bg-netral blur-[90px] fixed pointer-events-none top-0 sm:block hidden"
     />
   )
 }

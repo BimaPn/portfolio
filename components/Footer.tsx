@@ -42,7 +42,11 @@ const Footer = ({className}:{className?: string}) => {
       <div className="absolute inset-0 flex justify-center items-start sm:items-center pointer-events-none">
         <div className="boxWidth px-4 xs:px-6 sm:px-8 py-24 sm:py-0 text-center sm:text-start">
           <div className="w-full flex flex-col gap-3">
-                <motion.div className="font-bold text-white text-[35px] xs:text-[40px] sm:text-[44px] md:text-[50px]" variants={parentVariant} transition={{ staggerChildren: 0.04 }}> 
+                <motion.div
+                className="font-bold text-white text-[35px] xs:text-[40px] sm:text-[44px] md:text-[50px]"
+                variants={parentVariant}
+                transition={{ staggerChildren: 0.04 }}
+                > 
                   {splitText(title).map((char, index) => (
                     <motion.span 
                     transition={{ duration:0.7 }} 
@@ -51,7 +55,7 @@ const Footer = ({className}:{className?: string}) => {
                     >
                     {char} 
                     </motion.span>
-                  ))} 
+                    ))} 
                 </motion.div>
                 <motion.div className="w-full xs:w-[70%] sm:w-[60%] md:w-[40%] font-medium mx-auto sm:mx-0" variants={parentVariant} transition={{ staggerChildren: 0.01 }}> 
                   {splitText(description).map((char, index) => (

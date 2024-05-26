@@ -5,6 +5,9 @@
 .boxWidth {
   @apply w-full xl:w-[1440px] mx-auto
 }
+.boxWith-md {
+  @apply w-full lg:w-[1280px] mx-auto
+}
 .flexCenter {
   @apply flex justify-center items-center
 }

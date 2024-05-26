@@ -1,4 +1,5 @@
 "use client"
+import FollowCursor from "@/components/FollowCursor"
 import { FooterSimple } from "@/components/Footer"
 import { Rig } from "@/components/Laptop3D"
 import LaptopPreview from "@/components/LaptopPreview"
@@ -11,17 +12,17 @@ import { Suspense } from "react"
 
 const page = () => {
   return (
-    <section className="w-full lg:w-[1280px] px-3 ss:px-6 sm:px-8 mt-20 sm:mt-24 pb-36 relative"> 
-      <div className="w-full flexCenter flex-col">
+    <section className="px-3 ss:px-6 sm:px-8 mt-20 sm:mt-24 pb-36 relative"> 
+      <div className="boxWith-md  flexCenter flex-col">
         <div className="flex flex-col items-center relative text-center z-[2]">
-          <h1 className="text-[36px] sm:text-[42px] md:text-[50px] font-bold text-white text-glow-lg">Europark Museum</h1>
+          <h1 className="text-[32px] ss:text-[36px] sm:text-[42px] md:text-[50px] font-bold text-white text-glow-lg">Europark Museum</h1>
           <span className="font-medium text-slate-300 text-sm sm:text-base md:text-lg">Web Application</span>
         </div>
 
-        <div className="w-full flexCenter md:-mt-6">
-         <div className="w-full aspect-[16/9.5] lg:aspect-[16/9.5] h-fit relative z-[0]">
-          <div className="absolute left-[20%] -top-4 w-[60%] aspect-square h-fit rounded-full bg-netral blur-[90px]" />
-           <Canvas camera={{ position: [0, 12, -23], fov: 35 }}>
+        <div className="w-full flexCenter my-4 sm:my-2">
+         <div className="w-full aspect-[16/10.5] h-fit relative z-[0]">
+          <div className="absolute left-[10%] -top-16 w-[80%] aspect-[4/3.5] h-fit rounded-full bg-netral blur-[90px]" />
+           <Canvas camera={{ position: [0, 12, -40], fov: 13 }}>
             <Suspense fallback={null}>
               <group rotation={[0, Math.PI, 0]} >
                 <LaptopScreen3D currentVideo={1} />
@@ -34,8 +35,8 @@ const page = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-20 mx-auto">
-        <div className="flexCenter gap-4 sm:gap-7 py-4 relative z-[2]">
+      <div className="boxWith-md flex flex-col gap-16 sm:gap-20 mx-auto">
+        <div className="flexCenter gap-4 sm:gap-7 py-2 ss:py-4 relative z-[2]">
           <Link href={`/test`} className="font-semibold text-white text-glow-sm"> 
           Live Demo
           </Link>
@@ -52,7 +53,7 @@ const page = () => {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-7 sm:gap-12">
-          <div className="w-[85%] ss:w-[80%] sm:w-[40%] h-auto">
+          <div className="w-full ss:w-[80%] sm:w-[40%] h-auto">
             <Image src={`/mockup/1.png`} width={1980} height={1080} alt="project image" className="w-full h-auto" />
           </div>
 

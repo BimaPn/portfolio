@@ -8,8 +8,8 @@ import { videoElement, videos } from "@/constants/videos"
 
 
 const parentVariant = {
-  hidden: {x:0, y: -3.5, z: 8.2},
-  show: {y:-2, transition:{duration:1.5, type: "spring", bounce:0}}
+  hidden: {x:0, y: -3.8, z: 8.2},
+  show: {y:-2.6, transition:{duration:1.5, type: "spring", bounce:0}}
 }
 const screenVariant = {
  hidden: {rotateY: 0, rotateZ: 0, rotateX: 1.59},
@@ -25,7 +25,7 @@ const LaptopScreen3D = ({currentVideo=1}:{currentVideo: number}) => {
     initial="hidden"
     animate="show"
     variants={parentVariant}
-    rotation={[0.05,.02,0]}>
+    >
 
       <motion.group 
       variants={screenVariant}
@@ -45,7 +45,7 @@ const LaptopScreen3D = ({currentVideo=1}:{currentVideo: number}) => {
       </motion.group>
       <mesh material={materials.keys} geometry={nodes.keyboard.geometry} position={[1.79, 0, 3.45]} />
       <group position={[0, -0.1, 3.39]}>
-        <mesh material={materials.aluminium} geometry={nodes['Cube002'].geometry} />
+        <mesh material={materials.aluminium} geometry={nodes['Cube002'].geometry} /> 
         <mesh material={materials.trackpad} geometry={nodes['Cube002_1'].geometry} />
       </group>
       <mesh material={materials.touchbar} geometry={nodes.touchbar.geometry} position={[0, -0.03, 1.2]} />

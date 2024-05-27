@@ -7,9 +7,7 @@ import { socialMedia } from "@/constants/list"
 const Home = () => {
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[10] py-3 ss:py-4" >
-        <Navbar />
-      </header>
+      <Navbar />
       <main className="relative z-[1]">
         <Hero />
         <Projects />

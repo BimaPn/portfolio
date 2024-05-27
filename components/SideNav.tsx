@@ -1,6 +1,6 @@
 "use client"
 import { AnimatePresence, motion } from "framer-motion"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import LinkTransition from "./LinkTransition"
 
 const sideScreenVariants = {
@@ -54,9 +54,12 @@ const listVariants = {
   },
 }
 
-const SideNav = () => {
+const SideNav = ({activePage}:{activePage: string}) => {
   const [isOpen, setIsOpen] = useState(false)
 
+  useEffect(() => {
+    setIsOpen(false)
+  },[activePage])
   const leftVariants = {
     closed: {
       rotate: "0deg",
@@ -105,31 +108,49 @@ const SideNav = () => {
           >
             <div className="text-slate-500 mt-14 px-4">
               <div>
-                <motion.ul variants={parentListVariants} initial="initial" animate="animate" exit="initial" className="flex flex-col text-[52px] font-bold">
+                <motion.ul
+                variants={parentListVariants}
+                initial="initial" 
+                animate="animate" 
+                exit="initial" 
+                className="flex flex-col text-[52px] font-bold"
+                >
                   <li className="overflow-hidden -mb-4">
                     <motion.div variants={listVariants}>
                       <span className="text-sm font-semibold text-slate-400">Navigation</span>
                     </motion.div>
                   </li>
                   <li className="overflow-hidden">
-                    <motion.div variants={listVariants} className="text-light">
-                      <LinkTransition href="/" label="Home" />
+                    <motion.div 
+                    variants={listVariants} 
+                    className={`${activePage === "home" && "text-light"}`}
+                    >
+                      <LinkTransition href="/#home" label="Home" />
                     </motion.div>
                   </li>
                   <li className="overflow-hidden">
-                    <motion.div variants={listVariants}>
+                    <motion.div 
+                    variants={listVariants} 
+                    className={`${activePage === "about" && "text-light"}`}
+                    >
                       <LinkTransition href="/about" label="About" />
                     </motion.div>
                   </li>
 
                   <li className="overflow-hidden">
-                    <motion.div variants={listVariants}>
-                      <LinkTransition href="/projects/test" label="Projects" />
+                    <motion.div 
+                    variants={listVariants} 
+                    className={`${activePage === "projects" && "text-light"}`}
+                    >
+                      <LinkTransition href="/#projects" label="Projects" />
                     </motion.div>
                   </li>
                   <li className="overflow-hidden">
-                    <motion.div variants={listVariants}>
-                      <LinkTransition href="/contact" label="Contact" />
+                    <motion.div  
+                    variants={listVariants} 
+                    className={`${activePage === "contact" && "text-light"}`}
+                    >
+                      <LinkTransition href="/#contact" label="Contact" />
                     </motion.div>
                   </li>
                 </motion.ul>

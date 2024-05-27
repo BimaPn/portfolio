@@ -21,6 +21,8 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
     <motion.group
     dispose={null}
     variants={parentVariant}
+    initial="hidden"
+    animate="show"
     rotation={[.17,0,0]}>
 
       <motion.group 

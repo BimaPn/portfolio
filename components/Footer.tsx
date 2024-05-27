@@ -26,8 +26,7 @@ export const parentVariant = {
 
 const Footer = ({className}:{className?: string}) => {
   return (
-    <motion.section
-    id="contact"
+    <motion.div
     viewport={viewport}
     variants={parentVariant}
     initial="hidden"
@@ -86,7 +85,7 @@ const Footer = ({className}:{className?: string}) => {
         </div>
       </div>  
 
-    </motion.section> 
+    </motion.div> 
   )
 }
 

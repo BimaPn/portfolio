@@ -55,19 +55,17 @@ const Projects = () => {
   return (
   <> 
   <FollowCursor color={colors[currentProject-1]} />
-  <div className="-mt-12 sm:py-24">
+  <div  className="-mt-12 sm:py-24">
     <motion.div 
     ref={containerRef}
     viewport={viewport}
     variants={parentVariant}
     initial="hidden"
     whileInView="show" 
-    id="projects"
     className="w-full h-[350vh] relative z-[6] px-3 xs:px-6 sm:px-8"
     >
       <div className="w-full xl:w-[1440px] mx-auto h-screen sticky top-0 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-5 sm:gap-2">
-      
-        <div className="w-full sm:w-[60%] xl:w-[70%] flexCenter gap-3 relative">
+        <div id="projects" className="w-full sm:w-[60%] xl:w-[70%] flexCenter gap-3 relative">
           <motion.div variants={bgVariant} animate="color" className="absolute top-[6%] left-[6%] w-[85%] aspect-[4/3] rounded-full blur-[90px]"/>
           <div className="w-full h-fit aspect-[4/3]">
           <LaptopPreview currentProject={currentProject} />

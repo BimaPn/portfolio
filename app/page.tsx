@@ -7,11 +7,11 @@ const Home = () => {
   return (
     <>
       <main className="relative z-[1]">
-        <Hero />
-        <Projects />
-        <div className="w-full h-screen sm:h-[75vh] overflow-hidden flex items-end">
+          <Hero />
+          <Projects />
+        <footer id="contact" className="w-full h-screen sm:h-[75vh] overflow-hidden flex items-end">
           <Footer />
-        </div>
+        </footer>
       </main>
     </>
   )

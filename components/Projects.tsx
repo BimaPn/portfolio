@@ -14,7 +14,7 @@ const variants = {
   show: {y:0, opacity: 1}
 }
 export const viewport = {
-  margin: "0% 0% -80% 0%"  
+  margin: "-20% 0% -80% 0%"  
 }
 export const parentVariant = {
   show: { opacity:1 },
@@ -61,6 +61,7 @@ const Projects = () => {
     viewport={viewport}
     variants={parentVariant}
     initial="hidden"
+    id="cursor-active"
     whileInView="show" 
     className="w-full h-[350vh] relative z-[6] px-3 xs:px-6 sm:px-8"
     >
@@ -68,7 +69,7 @@ const Projects = () => {
         <div id="projects" className="w-full sm:w-[60%] xl:w-[70%] flexCenter gap-3 relative">
           <motion.div variants={bgVariant} animate="color" className="absolute top-[6%] left-[6%] w-[85%] aspect-[4/3] rounded-full blur-[90px]"/>
           <div className="w-full h-fit aspect-[4/3]">
-          <LaptopPreview currentProject={currentProject} />
+            <LaptopPreview currentProject={currentProject} />
           </div>
         </div>
 

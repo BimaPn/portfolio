@@ -16,7 +16,7 @@ const FollowCursor = ({color}:{color?:string}) => {
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove);
-    const element = document.getElementById("projects")
+    const element = document.getElementById("cursor-active")
     element!.addEventListener("mouseenter", mouseEnter)
     element!.addEventListener("mouseleave", mouseLeave)
     return () => {

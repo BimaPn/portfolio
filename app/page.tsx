@@ -6,9 +6,11 @@ import { socialMedia } from "@/constants/list"
 const Home = () => {
   return (
     <>
-      <main className="relative z-[1]">
+      <main >
+        <section className="relative z-[1]">
           <Hero />
-          <Projects />
+        </section >
+        <Projects />
         <footer id="contact" className="w-full h-screen sm:h-[75vh] overflow-hidden flex items-end">
           <Footer />
         </footer>

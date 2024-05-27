@@ -4,7 +4,6 @@ import {  useFrame, useThree } from '@react-three/fiber'
 import { Environment, useGLTF } from '@react-three/drei'
 import { motion } from "framer-motion-3d"
 import { videoElement, videos } from "@/constants/videos"
-import { useEffect } from "react"
 
 
 const parentVariant = {
@@ -18,10 +17,6 @@ const screenVariant = {
 
 const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
   const { nodes, materials } = useGLTF('/laptop3.glb') as any
-  useEffect(() => {
-    console.log("rerender")
-    },[])
-
   return (
     <motion.group
     dispose={null}

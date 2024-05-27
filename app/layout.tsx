@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Open_Sans, Bitter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import PageTransitionStart from "@/components/PageTransitionStart";
 
 const openSans = Open_Sans({ subsets:["latin"],weight:["400","500", "600", "700"],display: "swap"})
 const bitter = Bitter({ subsets:["latin"],weight:["400","500", "600", "700"],variable: "--font-bitter"})
@@ -18,7 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.className} ${bitter.variable} bg-dark text-slate-200`}> 
-      {children}
+        <PageTransitionStart> 
+          <Navbar />
+          {children}
+        </PageTransitionStart>
       </body>
     </html>
   );

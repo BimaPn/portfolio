@@ -27,6 +27,7 @@ export const parentVariant = {
 const Footer = ({className}:{className?: string}) => {
   return (
     <motion.section
+    id="contact"
     viewport={viewport}
     variants={parentVariant}
     initial="hidden"

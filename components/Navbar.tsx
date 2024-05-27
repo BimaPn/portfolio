@@ -63,10 +63,10 @@ const NavContent = () => {
             <LinkTransition label="About" href="/about" />
           </li>
           <li> 
-            <Link href={`/projects/test`}>Projects</Link>
+            <Link href={`#projects`}>Projects</Link>
           </li>
           <li> 
-            <Link href={`/contact`}>Contact</Link>
+            <Link href={`#contact`}>Contact</Link>
           </li>
         </ul>
         <div className="block sm:hidden">

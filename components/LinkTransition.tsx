@@ -6,7 +6,6 @@ const LinkTransition = ({href, label}:{href: string, label: string}) => {
 
   const activateLink = () => {
     changeHref(href)
-    console.log("clicked")
   }
   return (
     <button onClick={activateLink}>{label}</button>

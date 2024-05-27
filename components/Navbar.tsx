@@ -57,16 +57,16 @@ const NavContent = () => {
       <div className="flex items-center">
         <ul className="hidden sm:flex items-center text-[17px] text-slate-400 font-semibold gap-7 lg:gap-8">
           <li> 
-            <LinkTransition label="Home" href="/" />
+            <LinkTransition label="Home" href="/#home" />
           </li>
           <li> 
             <LinkTransition label="About" href="/about" />
           </li>
           <li> 
-            <Link href={`#projects`}>Projects</Link>
+            <LinkTransition label="Projects" href="/#projects" />
           </li>
           <li> 
-            <Link href={`#contact`}>Contact</Link>
+            <LinkTransition label="contact" href="/#contact" />
           </li>
         </ul>
         <div className="block sm:hidden">

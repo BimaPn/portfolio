@@ -2,6 +2,7 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { usePathname, useRouter } from "next/navigation"
+import { checkPath } from "@/constants/string"
 
 const variants = {
   hidden: {
@@ -20,13 +21,19 @@ const transitionContext = createContext<TransitionProvider | null>(null)
 
 const PageTransitionStart = ({children}:{children: React.ReactNode}) => {
   const [href, setHref] = useState<string | null>(null)
+  const [isOpen, setIsOpen] = useState(false)
+
   const path = usePathname()
   const router = useRouter()
 
   const changeHref = (destination: string) => setHref(destination)
 
+useEffect(() => {
+  setIsOpen(checkHref())
+},[href, isOpen])
+
   useEffect(() => {
-    if(href && path === href) {
+    if(href && path === checkPath(href)) {
       setHref(null)
     }
   },[path, href])
@@ -35,9 +42,21 @@ const PageTransitionStart = ({children}:{children: React.ReactNode}) => {
     if(!href) return
     router.push(href) 
   }
+
+  const checkHref = () => {
+    if(!href) return false
+    if(href && !href.includes("#")) return true
+
+    const str = href.split("#")
+    if(str[0] === path) {
+      router.push(href)
+      return false
+    }
+    return true
+  }
   return (
     <transitionContext.Provider value={{ changeHref }}> 
-      {href && ( 
+      {isOpen && ( 
         <motion.div 
         initial="hidden"
         animate="show" 

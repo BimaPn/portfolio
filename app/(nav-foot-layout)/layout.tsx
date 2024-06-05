@@ -8,9 +8,6 @@ export default function RootLayout({
   return (
     <> 
       {children}
-      <div className="w-full h-[89vh] overflow-hidden flex items-end -mt-12">
-        <Footer />
-      </div>
     </> 
   );
 }

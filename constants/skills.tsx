@@ -79,22 +79,22 @@ const designStacks = [
 export const skills = [
   {
     name: "Front-end",
-    description: "Lorem, ipsum dolor sit amet consectetur",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus deserunt excepturi placeat omnis asperiores.",
     stacks: frontStacks
   },
   {
     name: "Back-end",
-    description: "Lorem, ipsum dolor sit amet consectetur",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus deserunt excepturi placeat omnis asperiores.",
     stacks: backStacks
   },
   {
     name: "Development",
-    description: "Lorem, ipsum dolor sit amet consectetur",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus deserunt excepturi placeat omnis asperiores.",
     stacks: devStacks
   },
   {
     name: "Design",
-    description: "Lorem, ipsum dolor sit amet consectetur",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur doloribus deserunt excepturi placeat omnis asperiores.",
     stacks: designStacks
   },
 ]

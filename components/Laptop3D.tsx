@@ -1,10 +1,10 @@
 "use client"
 import {  Vector3 } from "three"
-import {  useFrame, useThree } from '@react-three/fiber'
-import { Environment, useGLTF } from '@react-three/drei'
+import {  Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Environment, useGLTF, useVideoTexture } from '@react-three/drei'
 import { motion } from "framer-motion-3d"
-import { videoElement, videos } from "@/constants/videos"
-
+import {  videos } from "@/constants/videos"
+import { Suspense, useEffect, useRef, useState } from "react"
 
 const parentVariant = {
   hidden: {x:0, y: -3.5, z: 1},
@@ -15,9 +15,50 @@ const screenVariant = {
  show: {rotateX: -.2, transition:{duration:1.5, type: "spring", bounce:0}}
 }
 
+const videoElement = (url: string) => {    
+  const vid = document.createElement("video");  
+  vid.src = url;  
+  vid.crossOrigin = "Anonymous";   
+  vid.loop = true;   
+  vid.muted = true; 
+  return vid;  
+}
 const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
   const { nodes, materials } = useGLTF('/laptop3.glb') as any
-  return (
+  const [loading, setLoading] = useState<boolean>(false)
+  const videoRefs = useRef<HTMLVideoElement[]>([]);
+  const loadingVideoRef = useRef<HTMLVideoElement | null>(null);
+  useEffect(() => {
+    setLoading(true);
+
+    videoRefs.current.forEach((video) => {
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+    });
+
+    const vid = videoElement(videos[currentVideo - 1]);
+    vid.play()
+    videoRefs.current = [vid];
+
+    const loadedData = () => {
+      setLoading(false)
+      vid.removeEventListener("loadeddata", loadedData)
+    }
+    vid.addEventListener('loadeddata', loadedData);
+    
+    if (!loadingVideoRef.current) {
+      const loadingVid = videoElement('/videos/loading.mp4');
+      loadingVideoRef.current = loadingVid;
+    }
+    return () => {
+      vid.pause();
+      vid.removeAttribute('src');
+      vid.load();
+    };
+  }, [currentVideo]);
+
+  return videoRefs.current[0] && loadingVideoRef.current && (
     <motion.group
     dispose={null}
     variants={parentVariant}
@@ -30,11 +71,9 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
           <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
           <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
           <mesh geometry={nodes['Cube008_2'].geometry}> 
-            <meshBasicMaterial> 
-              {currentVideo === 1 && <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[0])]}/>}
-              {currentVideo === 2 && <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[1])]}/>}
-              {currentVideo === 3 && <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[2])]}/>}
-              {currentVideo === 4 && <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[3])]}/>}
+            <meshBasicMaterial > 
+              {loading && <videoTexture  attach={`map`} args={[loadingVideoRef.current]}/>}
+              {!loading && <videoTexture  attach={`map`} flipY={false} args={[videoRefs.current[0]]}/>}
             </meshBasicMaterial>
           </mesh>
         </group>
@@ -57,6 +96,21 @@ export const Rig = () => {
     camera.position.lerp(vec.set(mouse.x/5, -mouse.y/5, camera.position.z), .1)
     camera.lookAt(0, 0, 0)
   })
+}
+
+export const Laptop = ({currentVideo=1}:{currentVideo?:number}) => {
+  return ( 
+   <Canvas camera={{ position: [0, 0, -26], fov: 20 }}>
+    <Suspense fallback={null}>
+    <pointLight position={[-4, 3, 1]} color={"#6B8AFD"} intensity={100} />
+      <group rotation={[0, Math.PI, 0]} >
+      <Laptop3D currentVideo={currentVideo} />
+      </group>
+      <Environment preset="city" />
+    </Suspense>
+    <Rig />
+  </Canvas>
+  )
 }
 
 export default Laptop3D

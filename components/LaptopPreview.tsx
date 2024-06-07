@@ -1,8 +1,13 @@
 "use client"
 import { Canvas } from "@react-three/fiber"
 import { Suspense } from "react"
-import Laptop3D, { Rig } from "./Laptop3D"
+import  { Rig } from "./Laptop3D"
 import { Environment } from "@react-three/drei"
+import dynamic from 'next/dynamic'
+ 
+const Laptop3D = dynamic(() => import('./Laptop3D'), {
+  ssr: false,
+})
 
 const LaptopPreview = ({currentProject}:{currentProject: number}) => {
   return (

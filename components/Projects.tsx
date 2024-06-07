@@ -6,8 +6,9 @@ import Link from "next/link"
 import { useRef, useState } from "react"
 import { PiArrowRightBold } from "react-icons/pi"
 import { splitText } from "@/utils/string"
-import LaptopPreview from "./LaptopPreview"
-import FollowCursor from "./FollowCursor"
+import { Stars } from "@react-three/drei"
+import { Canvas } from "@react-three/fiber"
+import { Laptop } from "./Laptop3D"
 
 const variants = {
   hidden: {y:300, opacity: 0},
@@ -54,7 +55,6 @@ const Projects = () => {
   }
   return (
   <> 
-  <FollowCursor color={colors[currentProject-1]} />
   <div  className="-mt-12 sm:py-24">
     <motion.div 
     ref={containerRef}
@@ -65,11 +65,17 @@ const Projects = () => {
     whileInView="show" 
     className="w-full h-[350vh] relative z-[6] px-3 xs:px-6 sm:px-8"
     >
+      <div className="absolute inset-0 z-0">
+        <Canvas>
+          <Stars radius={50} count={2000} factor={4} fade speed={2} />
+        </Canvas>
+      </div>
       <div className="w-full xl:w-[1440px] mx-auto h-screen sticky top-0 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-5 sm:gap-2">
+
         <div id="projects" className="w-full sm:w-[60%] xl:w-[70%] flexCenter gap-3 relative">
           <motion.div variants={bgVariant} animate="color" className="absolute top-[6%] left-[6%] w-[85%] aspect-[4/3] rounded-full blur-[90px]"/>
           <div className="w-full h-fit aspect-[4/3]">
-            <LaptopPreview currentProject={currentProject} />
+            <Laptop currentVideo={currentProject} />
           </div>
         </div>
 
@@ -100,7 +106,7 @@ const Projects = () => {
                     <Link href={`/projects/${project.slug}`}> 
                       <motion.span
                       className={`${project.id === currentProject ? "text-white text-glow-sm" : "text-slate-500"}
-                      text-2xl xs:text-[28px] sm:text-xl lg:text-3xl font-semibold origin-left font-highlight`}
+                      text-2xl xs:text-[28px] md:text-3xl lg:text-4xl font-bold origin-left`}
                       animate={{
                         scale: project.id === currentProject ? 1.1 : 1,
                         transition: { duration: .3, bounce: 0 }

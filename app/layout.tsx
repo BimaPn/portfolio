@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import PageTransitionStart from "@/components/PageTransitionStart";
 
-const openSans = Open_Sans({ subsets:["latin"],weight:["400","500", "600", "700"],display: "swap"})
+const openSans = Open_Sans({ subsets:["latin"],weight:["400","500", "600", "700"]})
 const bitter = Bitter({ subsets:["latin"],weight:["400","500", "600", "700"],variable: "--font-bitter"})
 
 export const metadata: Metadata = {

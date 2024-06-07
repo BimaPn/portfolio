@@ -32,3 +32,6 @@ html {
 .svg-glow {
   filter: drop-shadow(18px 18px 18px #64748B);
 }
+.title { 
+  @apply bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent
+}

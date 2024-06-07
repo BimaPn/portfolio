@@ -4,7 +4,7 @@ import { Suspense, useState } from 'react'
 import {  useFrame, useThree } from '@react-three/fiber'
 import { Environment, useGLTF } from '@react-three/drei'
 import { motion } from "framer-motion-3d"
-import { videoElement, videos } from "@/constants/videos"
+import {  videos } from "@/constants/videos"
 
 
 const parentVariant = {
@@ -38,7 +38,6 @@ const LaptopScreen3D = ({currentVideo=1}:{currentVideo: number}) => {
           <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
           <mesh geometry={nodes['Cube008_2'].geometry}> 
             <meshBasicMaterial> 
-              <videoTexture attach={`map`} flipY={false} args={[videoElement(videos[currentVideo-1])]}/>
             </meshBasicMaterial>
           </mesh>
         </group>

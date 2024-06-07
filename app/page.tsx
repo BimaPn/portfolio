@@ -1,3 +1,4 @@
+import FooterContent from "@/components/FooterContent"
 import Hero from "@/components/Hero"
 import Projects from "@/components/Projects"
 import { socialMedia } from "@/constants/list"
@@ -5,16 +6,17 @@ import { socialMedia } from "@/constants/list"
 const Home = () => {
   return (
     <>
-      <main >
-        <section className="relative z-[1]">
+      <main className="relative z-[1]">
           <Hero />
-        </section >
-        <Projects />
+          <Projects />
+          <FooterContent />
       </main>
     </>
   )
 }
 
 export default Home
+
+
 
 

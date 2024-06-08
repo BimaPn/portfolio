@@ -35,3 +35,4 @@ html {
 .title { 
   @apply bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent
 }
+

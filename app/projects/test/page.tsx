@@ -1,8 +1,5 @@
 "use client"
-import { FooterSimple, viewport } from "@/components/Footer"
 import { Rig } from "@/components/Laptop3D"
-import LaptopPreview from "@/components/LaptopPreview"
-import LaptopScreen3D from "@/components/LaptopScreen3D"
 import { splitText } from "@/utils/string"
 import { Environment } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
@@ -10,6 +7,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Suspense } from "react"
 import { motion } from "framer-motion"
+import Footer from "@/components/Footer"
+import { viewport } from "@/components/Projects"
 
 
 const variants = {
@@ -32,7 +31,7 @@ const page = () => {
         <Section2 /> 
         <Section3 /> 
       </div>
-      <FooterSimple />
+      <Footer />
     </section>  
   ) 
 }
@@ -86,7 +85,6 @@ const Hero = () => {
          <Canvas camera={{ position: [0, 12, -40], fov: 13 }}>
           <Suspense fallback={null}>
             <group rotation={[0, Math.PI, 0]} >
-              <LaptopScreen3D currentVideo={1} />
             </group>
             <Environment preset="city" />
           </Suspense>

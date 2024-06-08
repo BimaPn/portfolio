@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     <motion.header 
-    className="fixed top-0 left-0 right-0 z-[10] py-3 ss:py-4 px-3 xs:px-6 sm:px-8 " 
+    className="fixed top-0 left-0 right-0 z-[10] py-3 ss:py-4 px-3 xs:px-6 sm:px-8" 
     >
       <NavContent activePage={activePage} />
     </motion.header>
@@ -53,8 +53,8 @@ const Navbar = () => {
 const NavContent = ({activePage}:{activePage: string}) => {
   return (
     <nav className="w-full xl:w-[1440px] mx-auto flexBetween">
-      <div className="font-bold text-slate-200 text-2xl">
-        <span>BimaPN</span>
+      <div className="font-bold text-slate-200 text-[22px] xs:text-2xl">
+        <span>BimaP</span>
       </div>
       <div className="flex items-center">
         <ul className="hidden sm:flex items-center text-[17px] text-slate-400 font-semibold gap-7 lg:gap-8">

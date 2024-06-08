@@ -1,112 +1,137 @@
 "use client"
-import Spline from "@splinetool/react-spline"
-import Link from "next/link"
-import { MdOutlineArrowForward } from "react-icons/md"
-import { motion } from "framer-motion"
-import { splitText } from "@/utils/string"
-import { PiArrowUpRightBold } from "react-icons/pi"
-import { socials } from "@/constants/socialMedia"
+import { Stars } from "@react-three/drei";
 
-const title = "Let's get in touch 😙"
-const description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aut quo suscipit minima. Voluptatem, consequatur."
+import { Canvas } from "@react-three/fiber";
 
-const variants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1 }
-}
+import React, { useEffect, useRef } from "react";
 
-export const viewport = {
-  once: true,
-  margin: "0% 0% -50% 0%"  
-}
-export const parentVariant = {
-  show: { opacity:1 },
-  hidden: {opacity:0}
-}
+import { FiArrowRight } from "react-icons/fi";
 
-const Footer = ({className}:{className?: string}) => {
+import {
+  useMotionTemplate,
+  useMotionValue,
+  motion,
+  animate,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+
+
+const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
+
+
+const Footer = () => {
+  const containerRef = useRef<HTMLElement>(null)
+  const color = useMotionValue(COLORS_TOP[0]);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"]
+  });
+  const y = useTransform(scrollYProgress, [0,1],["-100%","0%"])
+  const opacity = useTransform(scrollYProgress, [0,1],["0%","100%"])
+
+  useEffect(() => {
+
+    animate(color, COLORS_TOP, {
+
+      ease: "easeInOut",
+
+      duration: 10,
+
+      repeat: Infinity,
+
+      repeatType: "mirror",
+
+    });
+
+  }, []);
+
+
+  const backgroundImage = useMotionTemplate`radial-gradient(160% 160% at 50% 0%, #020413 50%, ${color})`;
+
+  const border = useMotionTemplate`1px solid ${color}`;
+
+  const boxShadow = useMotionTemplate`0px 4px 20px ${color}`;
+
+
   return (
-    <motion.div
-    viewport={viewport}
-    variants={parentVariant}
-    initial="hidden"
-    whileInView="show"
-    className={`w-full h-screen -mt-10 relative z-[1] ${className}`}
+
+    <motion.section
+      ref={containerRef}
+      id="contact"
+      style={{
+        opacity,
+        backgroundImage
+      }}
+
+      className="relative grid min-h-[100vh] place-content-center overflow-hidden bg-dark px-4 py-24"
+
     >
-      <motion.div variants={parentVariant} transition={{ delay: 1 }} className="w-full h-full flexCenter">
-       <Spline scene="https://prod.spline.design/Cy04erwI2vDlOuEr/scene.splinecode" />
+
+      <motion.div style={{ y }} className="relative z-10 flex flex-col items-center">
+
+        <h1 className="max-w-3xl  text-center text-3xl font-bold leading-tight title sm:text-5xl sm:leading-tight md:text-[50px] md:leading-tight">
+
+        Let's Get in Touch 
+
+        </h1>
+
+        <p className="mb-8 mt-4 max-w-xl text-center text-base leading-relaxed md:text-lg md:leading-relaxed">
+
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae, et,
+
+          distinctio eum impedit nihil ipsum modi.
+
+        </p>
+
+        <motion.button
+
+          style={{
+
+            border,
+
+            boxShadow,
+
+          }}
+
+          whileHover={{
+
+            scale: 1.015,
+
+          }}
+
+          whileTap={{
+
+            scale: 0.985,
+
+          }}
+
+          className="group relative flex w-fit items-center gap-1.5 rounded-full bg-gray-950/10 px-4 py-2 text-gray-50 transition-colors hover:bg-gray-950/50"
+
+        >
+
+          Contact me 
+
+          <FiArrowRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
+
+        </motion.button>
+
       </motion.div>
-      
-      <FooterSimple />
 
-      <div className="absolute inset-0 flex justify-center items-start sm:items-center pointer-events-none">
-        <div className="boxWidth px-4 xs:px-6 sm:px-8 py-24 sm:py-0 text-center sm:text-start">
-          <div className="w-full flex flex-col gap-3">
-                <motion.div
-                className="font-bold text-white text-[35px] xs:text-[40px] sm:text-[44px] md:text-[50px]"
-                variants={parentVariant}
-                transition={{ staggerChildren: 0.04 }}
-                > 
-                  {splitText(title).map((char, index) => (
-                    <motion.span 
-                    transition={{ duration:0.7 }} 
-                    variants={variants} 
-                    key={index}
-                    >
-                    {char} 
-                    </motion.span>
-                    ))} 
-                </motion.div>
-                <motion.div className="w-full xs:w-[70%] sm:w-[60%] md:w-[40%] font-medium mx-auto sm:mx-0" variants={parentVariant} transition={{ staggerChildren: 0.01 }}> 
-                  {splitText(description).map((char, index) => (
-                    <motion.span 
-                    transition={{ duration:0.1 }} 
-                    variants={variants} 
-                    key={index}
-                    >
-                    {char} 
-                    </motion.span>
-                  ))} 
-                </motion.div>
-            <Link href={`/contact`} className="pointer-events-auto hover:scale-105 transition-transform sm:origin-left"> 
-              <motion.div className="font-medium mt-2 text-glow-sm text-white" variants={parentVariant} transition={{ staggerChildren: 0.07 }}> 
-                {splitText("👉 Message me 👈").map((char, index) => (
-                  <motion.span 
-                  transition={{ duration:0.7 }} 
-                  variants={variants} 
-                  key={index}
-                  >
-                  {char} 
-                  </motion.span>
-                ))} 
-              </motion.div>
-            </Link>
-          </div>
-        </div>
-      </div>  
 
-    </motion.div> 
-  )
-}
+      <div className="absolute inset-0 z-0">
 
-export const FooterSimple = () => {
-  return (
-    <div className="absolute bottom-0 left-0 right-0 text-sm sm:text-[15px]">
-      <div className="w-full xl:w-[1440px] px-3 xs:px-6 sm:px-8 flexBetween sm:flex-row flex-col-reverse gap-3 py-4 sm:py-5 mx-auto">
-        <div className="font-medium text-slate-400">
-          <span>© 2024 <Link href={`/about`} className="text-white">Bima PN</Link>. Made with love ❤️</span>
-        </div>
-        <div className="flex items-center gap-5 sm:gap-7">
-        {socials.map((social) => (
-          <Link href={social.link} key={social.label} className="font-medium text-slate-400 hover:text-white flexCenter gap-1">
-            <span>{social.label}</span>
-            <PiArrowUpRightBold className="-mb-[1px]" />
-          </Link>
-        ))}
-        </div>
+        <Canvas>
+
+          <Stars radius={50} count={150} factor={4} fade speed={2} />
+
+        </Canvas>
+
       </div>
-    </div>
-  )
-}
 
+    </motion.section>
+
+  );
+
+};
 export default Footer

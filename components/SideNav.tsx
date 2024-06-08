@@ -83,7 +83,7 @@ const SideNav = ({activePage}:{activePage: string}) => {
     }
   }
   return (
-      <div className="w-[24px] aspect-[4/3.6] relative z-[10] ">
+      <div className="w-[22px] aspect-[4/3.6] relative z-[10] ">
       <button onClick={() => setIsOpen(prev => !prev)} className='absolute top-0 left-0 z-[11] w-full h-full grid grid-cols-1 grid-rows-3'>
         <motion.div
         variants={leftVariants}

@@ -34,11 +34,13 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
     videoRefs.current.forEach((video) => {
       video.pause();
       video.removeAttribute('src');
-      video.load();
     });
 
     const vid = videoElement(videos[currentVideo - 1]);
-    vid.play()
+    if(vid.paused) {
+      vid.play()
+    }
+
     videoRefs.current = [vid];
 
     const loadedData = () => {
@@ -54,7 +56,6 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
     return () => {
       vid.pause();
       vid.removeAttribute('src');
-      vid.load();
     };
   }, [currentVideo]);
 
@@ -93,7 +94,7 @@ export const Rig = () => {
   const vec = new Vector3()
 
   return useFrame(() => {
-    camera.position.lerp(vec.set(mouse.x/5, -mouse.y/5, camera.position.z), .1)
+    camera.position.lerp(vec.set(mouse.x/5, -mouse.y, camera.position.z), .1)
     camera.lookAt(0, 0, 0)
   })
 }

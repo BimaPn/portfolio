@@ -1,6 +1,7 @@
-import FooterContent from "@/components/FooterContent"
+import Footer from "@/components/Footer"
 import Hero from "@/components/Hero"
 import Projects from "@/components/Projects"
+import StarsBackground from "@/components/StarsBackground"
 import { socialMedia } from "@/constants/list"
 
 const Home = () => {
@@ -8,8 +9,10 @@ const Home = () => {
     <>
       <main className="relative z-[1]">
           <Hero />
-          <Projects />
-          <FooterContent />
+          <StarsBackground> 
+            <Projects />
+          </StarsBackground>
+          <Footer />
       </main>
     </>
   )

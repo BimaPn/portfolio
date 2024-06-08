@@ -10,7 +10,7 @@ const variants = {
   },
   show: {
     height: "100vh",
-    transition:{duration:.5}
+    transition:{duration:.3}
   }
 }
 
@@ -61,7 +61,7 @@ useEffect(() => {
         initial="hidden"
         animate="show" 
         className="relative z-[15]"
-        transition={{ staggerChildren:.25 }}
+        transition={{ staggerChildren:.15 }}
         onAnimationComplete={animationFinished}> 
           <motion.div variants={variants} className="bg-primary fixed top-0 left-0 w-1/4 origin-top" />
           <motion.div variants={variants} className="bg-primary fixed top-0 left-1/4 w-1/4 origin-top" />

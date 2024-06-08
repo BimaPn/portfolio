@@ -6,8 +6,6 @@ import Link from "next/link"
 import { useRef, useState } from "react"
 import { PiArrowRightBold } from "react-icons/pi"
 import { splitText } from "@/utils/string"
-import { Stars } from "@react-three/drei"
-import { Canvas } from "@react-three/fiber"
 import { Laptop } from "./Laptop3D"
 
 const variants = {
@@ -55,7 +53,7 @@ const Projects = () => {
   }
   return (
   <> 
-  <div  className="-mt-12 sm:py-24">
+  <div  className="mt-12 sm:-mt-12 sm:py-24">
     <motion.div 
     ref={containerRef}
     viewport={viewport}
@@ -65,11 +63,6 @@ const Projects = () => {
     whileInView="show" 
     className="w-full h-[350vh] relative z-[6] px-3 xs:px-6 sm:px-8"
     >
-      <div className="absolute inset-0 z-0">
-        <Canvas>
-          <Stars radius={50} count={2000} factor={4} fade speed={2} />
-        </Canvas>
-      </div>
       <div className="w-full xl:w-[1440px] mx-auto h-screen sticky top-0 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-5 sm:gap-2">
 
         <div id="projects" className="w-full sm:w-[60%] xl:w-[70%] flexCenter gap-3 relative">
@@ -83,7 +76,7 @@ const Projects = () => {
           <div className="flex flex-col">
             <motion.div 
             variants={parentVariant} className="text-sm xs:text-base sm:text-sm md:text-base" transition={{ staggerChildren: 0.02 }}> 
-              {splitText("Selected project 🤓 🖥️").map((char, index) => (
+              {splitText("Selected project 🖥️").map((char, index) => (
                 <motion.span 
                 transition={{ duration:0.7 }} 
                 variants={variants} 
@@ -105,8 +98,8 @@ const Projects = () => {
                   <div className="flexBetween"> 
                     <Link href={`/projects/${project.slug}`}> 
                       <motion.span
-                      className={`${project.id === currentProject ? "text-white text-glow-sm" : "text-slate-500"}
-                      text-2xl xs:text-[28px] md:text-3xl lg:text-4xl font-bold origin-left`}
+                      className={`${project.id === currentProject ? "text-white" : "text-slate-500"}
+                      text-2xl xs:text-[28px] md:text-3xl lg:text-[34px] font-semibold origin-left`}
                       animate={{
                         scale: project.id === currentProject ? 1.1 : 1,
                         transition: { duration: .3, bounce: 0 }
@@ -126,7 +119,7 @@ const Projects = () => {
                         </div>
                       )}
                   </div>
-                  <div className="w-full text-base sm:text-sm md:text-base overflow-hidden">
+                  <div className="w-full text-sm sm:text-sm md:text-base overflow-hidden">
                     {project.id === currentProject && (
                       <motion.span 
                       initial={{  opacity: 0 }}
@@ -148,13 +141,3 @@ const Projects = () => {
 }
 
 export default Projects
-
-      //  <Canvas camera={{ position: [0, 10, -25], fov: 35 }}>
-      //   <Suspense fallback={null}>
-      //     <group rotation={[0, Math.PI, 0]} >
-      //       <Laptop3D currentVideo={currentProject} />
-      //     </group>
-      //     <Environment preset="city" />
-      //   </Suspense>
-      //   <Rig />
-      // </Canvas>

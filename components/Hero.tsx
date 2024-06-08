@@ -1,7 +1,5 @@
-
 import HeroContent from "./HeroContent"
 import HeroModel from "./HeroModel"
-
 
 const Hero = () => {
   return (

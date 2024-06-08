@@ -5,6 +5,7 @@ import { Environment, useGLTF, useVideoTexture } from '@react-three/drei'
 import { motion } from "framer-motion-3d"
 import {  videos } from "@/constants/videos"
 import { Suspense, useEffect, useRef, useState } from "react"
+import Loader3D from "./Loader3D"
 
 const parentVariant = {
   hidden: {x:0, y: -3.5, z: 1},
@@ -102,7 +103,7 @@ export const Rig = () => {
 export const Laptop = ({currentVideo=1}:{currentVideo?:number}) => {
   return ( 
    <Canvas camera={{ position: [0, 0, -26], fov: 20 }}>
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loader3D />}>
     <pointLight position={[-4, 3, 1]} color={"#6B8AFD"} intensity={100} />
       <group rotation={[0, Math.PI, 0]} >
       <Laptop3D currentVideo={currentVideo} />

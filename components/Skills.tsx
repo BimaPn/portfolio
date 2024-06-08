@@ -32,23 +32,21 @@ const Skills = () => {
             <div className="w-2 aspect-square rounded-full bg-white -mb-[1px] box-glow" />
             <span>My skills</span>
           </motion.h2>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-12 mt-2 xs:mt-4">
             {skills.map((skill) => (
-              <div key={skill.name} className="flex flex-col gap-1">
+              <div key={skill.name} className="flex flex-col xs:gap-1">
                 <div className="flex flex-col gap-2 pb-1 mb-2">
-                  <motion.span variants={textVariants} transition={{ duration: .4,delay:.4 }}  className="font-semibold text-[34px] text-white">{skill.name}</motion.span>
-                  <motion.div variants={lineVariant} transition={{ duration:.4 }} className="w-1/4 sm:w-1/4 border-t-2 border-primary origin-left" />
+                  <motion.span  
+                  variants={textVariants} 
+                  transition={{ duration: .4,delay:.4 }} 
+                  className="font-semibold text-[26px] xs:text-[28px] sm:text-[30px] md:text-[34px] text-white" 
+                  >{skill.name}</motion.span>
+                  <motion.div  
+                  variants={lineVariant} 
+                  transition={{ duration:.4 }} 
+                  className="w-1/4 sm:w-1/4 border-t-2 border-primary origin-left" />
                 </div>
-
                 <motion.span variants={textVariants} transition={{ duration:.4, delay:.7 }}>{skill.description}</motion.span>
-                <motion.div variants={textVariants} transition={{ duration:.4, delay: .8 }} className="flex items-center flex-nowrap gap-5 mt-5">
-                  {skill.stacks.map((stack) => (
-                  <Link href={stack.link} key={stack.link}> 
-                    {stack.icon}
-                  </Link>
-                  ))}
-                </motion.div>
               </div>
             ))}
           </div>

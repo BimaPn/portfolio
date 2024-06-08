@@ -1,18 +1,25 @@
 "use client"
 import { textVariants } from "@/constants/framer"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import Image from "next/image"
+import { useRef } from "react"
 
 const AboutMe = () => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0,1],["0%","15%"])
   return (
-      <div className="w-full lg:w-[1200px] mx-auto mt-6">
+      <div ref={containerRef} className="w-full lg:w-[1200px] mx-auto mt-6">
         <div className="w-fit flex flex-col gap-4 xs:gap-7">
           <motion.h2 
           variants={textVariants} 
           initial="hidden" 
           animate="show" 
           transition={{ duration:.4, delay:1}} 
-          className="flex items-center gap-3 font-semibold tracking-tight text-slate-400 -mb-[14px]" 
+          className="flex items-center gap-3 font-semibold tracking-tight text-slate-400 -mb-[8px] xs:-mb-[14px]" 
           > 
             <div className="w-2 aspect-square rounded-full bg-white box-glow" />
             <span>About me</span>
@@ -41,8 +48,14 @@ const AboutMe = () => {
 
           </motion.div>
 
-          <div className="w-full sm:w-[45%] aspect-[3/4] relative mt-3 overflow-hidden">
-            <motion.div initial={{ scale: 1.03}} animate={{ scale:1 }} transition={{ delay: 1.5, duration:.5 }} className="w-full h-full relative z-0"> 
+          <div className="w-full sm:w-[45%] aspect-[3/4] relative mt-3 overflow-hidden rounded-lg">
+            <motion.div  
+            initial={{ scale: 1.03}} 
+            animate={{ scale:1 }} 
+            transition={{ delay: 1.5, duration:.5 }} 
+            style={{ y }}
+            className="w-full h-full relative z-0"
+            > 
               <Image src={`/person.jpg`} alt="the creator" fill className="object-cover rounded-lg" />
             </motion.div>
             <motion.div 

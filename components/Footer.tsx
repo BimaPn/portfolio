@@ -50,7 +50,7 @@ const Footer = () => {
   }, []);
 
 
-  const backgroundImage = useMotionTemplate`radial-gradient(160% 160% at 50% 0%, #020413 50%, ${color})`;
+  const backgroundImage = useMotionTemplate`radial-gradient(150% 150% at 50% 0%, #020413 50%, ${color})`;
 
   const border = useMotionTemplate`1px solid ${color}`;
 
@@ -76,7 +76,7 @@ const Footer = () => {
       </div>  
       <motion.div style={{ y }} className="relative z-10 flex flex-col items-center">
 
-        <h1 className="max-w-3xl  text-center text-3xl font-semibold leading-tight title sm:text-5xl sm:leading-tight md:text-[50px] md:leading-tight">
+        <h1 className="max-w-3xl text-center text-3xl font-semibold leading-tight text-white sm:text-5xl sm:leading-tight md:text-[50px] md:leading-tight">
 
         Let's Get in Touch 
 

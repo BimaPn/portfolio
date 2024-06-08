@@ -1,9 +1,9 @@
 "use client"
 import {  Vector3 } from "three"
 import {  Canvas, useFrame, useThree } from '@react-three/fiber'
-import { Environment, useGLTF, useVideoTexture } from '@react-three/drei'
+import { Environment, useGLTF } from '@react-three/drei'
 import { motion } from "framer-motion-3d"
-import {  videos } from "@/constants/videos"
+import {  videoElement, videos } from "@/constants/videos"
 import { Suspense, useEffect, useRef, useState } from "react"
 import Loader3D from "./Loader3D"
 
@@ -16,14 +16,6 @@ const screenVariant = {
  show: {rotateX: -.2, transition:{duration:1.5, type: "spring", bounce:0}}
 }
 
-const videoElement = (url: string) => {    
-  const vid = document.createElement("video");  
-  vid.src = url;  
-  vid.crossOrigin = "Anonymous";   
-  vid.loop = true;   
-  vid.muted = true; 
-  return vid;  
-}
 const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
   const { nodes, materials } = useGLTF('/laptop3.glb') as any
   const [loading, setLoading] = useState<boolean>(false)
@@ -95,7 +87,7 @@ export const Rig = () => {
   const vec = new Vector3()
 
   return useFrame(() => {
-    camera.position.lerp(vec.set(mouse.x/5, -mouse.y, camera.position.z), .1)
+    camera.position.lerp(vec.set(mouse.x/5, -mouse.y/3.5, camera.position.z), .1)
     camera.lookAt(0, 0, 0)
   })
 }

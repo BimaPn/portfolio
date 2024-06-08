@@ -98,7 +98,7 @@ const Projects = () => {
                   <div className="flexBetween"> 
                     <Link href={`/projects/${project.slug}`}> 
                       <motion.span
-                      className={`${project.id === currentProject ? "text-white" : "text-slate-500"}
+                      className={`${project.id === currentProject ? "text-white" : "text-slate-500 hover:text-white"}
                       text-2xl xs:text-[28px] md:text-3xl lg:text-[34px] font-semibold origin-left`}
                       animate={{
                         scale: project.id === currentProject ? 1.1 : 1,

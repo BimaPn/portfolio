@@ -1,15 +1,11 @@
 "use client"
 import { motion } from "framer-motion"
 import { splitText } from "@/utils/string"
+import { textVariants } from "@/constants/framer"
 
 const title = "Hi, I'm Bima 👋"
 const highlight = "Fullstack Developer"
 const description = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima neque non, debitis quasi asperiores ipsa, animi, cumque"
-
-const variants = {
-  hidden: {  y: 15, opacity: 0 },
-  show: {  y: 0, opacity: 1 }
-}
 
 const HeroContent = () => {
   return (
@@ -18,7 +14,7 @@ const HeroContent = () => {
               <div className="flex flex-col leading-[44px] xs:leading-[52px] sm:leading-[60px] font-bold text-[36px] xs:text-[46px] md:text-[50px] tracking-tight">
                 <div> 
                  <motion.span 
-                 variants={variants} 
+                 variants={textVariants} 
                  initial="hidden" 
                  animate="show" 
                  transition={{ duration:.3 }} 
@@ -27,7 +23,7 @@ const HeroContent = () => {
                 </div>
                 <div> 
                   <motion.span 
-                  variants={variants} 
+                  variants={textVariants} 
                   initial="hidden" 
                   animate="show" 
                   transition={{ delay:.2, duration:.3 }} 
@@ -41,7 +37,7 @@ const HeroContent = () => {
               className="w-full xs:w-[90%] sm:w-1/2 lg:w-[40%] font-medium text-slate-300"
               > 
                 <motion.span 
-                variants={variants} 
+                variants={textVariants} 
                 initial="hidden" 
                 animate="show"  
                 transition={{ delay:.5, duration:.3  }} 

@@ -70,7 +70,7 @@ const Footer = () => {
 
       <motion.div style={{ y }} className="relative z-10 flex flex-col items-center">
 
-        <h1 className="max-w-3xl  text-center text-3xl font-bold leading-tight title sm:text-5xl sm:leading-tight md:text-[50px] md:leading-tight">
+        <h1 className="max-w-3xl  text-center text-3xl font-semibold leading-tight title sm:text-5xl sm:leading-tight md:text-[50px] md:leading-tight">
 
         Let's Get in Touch 
 

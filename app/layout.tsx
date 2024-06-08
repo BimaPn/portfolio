@@ -3,6 +3,7 @@ import { Open_Sans, Bitter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import PageTransitionStart from "@/components/PageTransitionStart";
+import Footer from "@/components/Footer";
 
 const openSans = Open_Sans({ subsets:["latin"],weight:["400","500", "600", "700"]})
 const bitter = Bitter({ subsets:["latin"],weight:["400","500", "600", "700"],variable: "--font-bitter"})
@@ -23,6 +24,7 @@ export default function RootLayout({
         <PageTransitionStart> 
           <Navbar />
           {children}
+          <Footer />
         </PageTransitionStart>
       </body>
     </html>

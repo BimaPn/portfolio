@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer"
 import Hero from "@/components/Hero"
 import Projects from "@/components/Projects"
 import StarsBackground from "@/components/StarsBackground"
@@ -12,7 +11,6 @@ const Home = () => {
           <StarsBackground> 
             <Projects />
           </StarsBackground>
-          <Footer />
       </main>
     </>
   )

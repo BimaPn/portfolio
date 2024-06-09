@@ -17,7 +17,7 @@ const HeroContent = () => {
                  variants={textVariants} 
                  initial="hidden" 
                  animate="show" 
-                 transition={{ duration:.3 }} 
+                 transition={{ duration:.4 }} 
                  className="inline-block">
                  {title}</motion.span>
                 </div>
@@ -26,7 +26,7 @@ const HeroContent = () => {
                   variants={textVariants} 
                   initial="hidden" 
                   animate="show" 
-                  transition={{ delay:.2, duration:.3 }} 
+                  transition={{ delay:.2, duration:.4 }} 
                   className="inline-block" 
                   >A <span className="text-white text-glow-lg">Fullstack Developer</span> 
                   </motion.span>

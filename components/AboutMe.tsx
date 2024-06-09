@@ -49,7 +49,7 @@ const AboutMe = () => {
           </motion.div>
           
           <div className="w-full sm:w-[45%] relative"> 
-            <motion.div className="absolute bg-blue-950 top-4 left-0 w-full aspect-[3/4] blur-[20px]"/>
+            <motion.div className="absolute bg-blue-950 top-6 left-0 w-full aspect-[3/4] blur-[20px]"/>
 
             <div className="w-full aspect-[3/4] relative mt-3 overflow-hidden rounded-lg">
               <motion.div  

@@ -6,6 +6,7 @@ import { Suspense, useEffect, useRef, useState } from "react"
 import Loader3D from "./Loader3D"
 import { Rig } from "./Laptop3D"
 import { videoElement } from '@/constants/videos'
+import { SRGBColorSpace } from 'three'
 
 const parentVariant = {
   hidden: {x:0, y: -3, z: 7},
@@ -60,7 +61,13 @@ const Laptop3D = ({videoSrc}:{videoSrc: string}) => {
           <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
           <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
           <mesh geometry={nodes['Cube008_2'].geometry}> 
-            <meshBasicMaterial > 
+            <meshBasicMaterial 
+            toneMapped={false}
+            onUpdate={self => {  
+              self.needsUpdate = true
+              self.map!.colorSpace = SRGBColorSpace;
+            }}
+            > 
               {loading && <videoTexture  attach={`map`} args={[loadingVideoRef.current]}/>}
               {!loading && <videoTexture  attach={`map`} flipY={false} args={[videoRef.current]}/>}
             </meshBasicMaterial>

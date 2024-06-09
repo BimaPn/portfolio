@@ -1,5 +1,3 @@
-
-
 export const skills = [
   {
     name: "Front-end",

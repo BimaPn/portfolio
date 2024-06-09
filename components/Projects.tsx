@@ -119,7 +119,7 @@ const Projects = () => {
                         </div>
                       )}
                   </div>
-                  <div className="w-full text-sm sm:text-sm md:text-base overflow-hidden">
+                  <div className="w-full text-sm md:text-base overflow-hidden leading-[22px] md:leading-[24px]">
                     {project.id === currentProject && (
                       <motion.span 
                       initial={{  opacity: 0 }}

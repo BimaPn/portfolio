@@ -14,8 +14,20 @@ const Page = ({params}:Params) => {
   }
   return project && (
     <section className="px-3 ss:px-6 sm:px-8 mt-16 sm:mt-24 relative"> 
-      <Header videoSrc={videos[project.id-1]} title={project.title} color={colors[project.id-1]} />
-      <Content />
+      <Header 
+      videoSrc={videos[project.id-1]} 
+      title={project.title}  
+      type={project.type}
+      color={colors[project.id-1]} 
+      />
+      <Content 
+      demoLink={project.demoLink} 
+      codeLink={project.codeLink} 
+      previewImages={project.previewImages}  
+      overview={project.overview}
+      role={project.role}
+      stacks={project.stacks}
+      />
     </section>  
   ) 
 }

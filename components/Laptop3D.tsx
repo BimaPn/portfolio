@@ -70,7 +70,7 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
             onUpdate={self => {  
               self.needsUpdate = true
               self.map!.colorSpace = SRGBColorSpace;
-              }}
+            }}
             > 
               {loading && <videoTexture  attach={`map`} args={[loadingVideoRef.current]}/>}
               {!loading && <videoTexture  attach={`map`} flipY={false} args={[videoRefs.current[0]]}/>}

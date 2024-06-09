@@ -9,11 +9,11 @@ import { videoElement } from '@/constants/videos'
 
 const parentVariant = {
   hidden: {x:0, y: -3, z: 7},
-  show: {y:-2.2, transition:{ delay:.3,  duration:1.5, type: "spring", bounce:0}}
+  show: {y:-2.2, transition:{  duration:1.5, type: "spring", bounce:0}}
 }
 const screenVariant = {
  hidden: {rotateY: 0, rotateZ: 0, rotateX: 1},
- show: {rotateX: -.2, transition:{delay:.3,duration:1.5, type: "spring", bounce:0}}
+ show: {rotateX: -.2, transition:{duration:1.5, type: "spring", bounce:0}}
 }
 
 

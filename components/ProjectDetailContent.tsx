@@ -24,7 +24,7 @@ export const Header = ({videoSrc, title, color}:{videoSrc: string, title: string
         initial="hidden" 
         animate="show" 
         transition={{ duration:.4, delay:1 }}
-        className="text-[32px] ss:text-[36px] sm:text-[42px] md:text-[46px] font-semibold text-white text-glow-sm"
+        className="text-[32px] ss:text-[36px] sm:text-[42px] md:text-[46px] font-bold text-white text-glow-sm"
         > 
           {title}
         </motion.h1>
@@ -155,7 +155,7 @@ export const Content = () => {
     <div className="boxWith-md flex flex-col gap-16 sm:gap-20 mx-auto">
       <div className="flexCenter gap-5 sm:gap-7 py-2 ss:py-4 relative z-[2]">
         <Link href={`/test`} className="flex items-center gap-[6px] font-semibold text-white "> 
-        <Image src={`/icons/play.png`} alt="icon" width={40} height={40} className="w-[14px] h-auto" />
+        <Image src={`/icons/play.png`} alt="icon" width={40} height={40} className="w-[13px] h-auto" />
         Live Demo
         </Link>
         <Link href={`/test`} className="flex items-center gap-[6px] font-semibold text-slate-400"> 

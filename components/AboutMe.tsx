@@ -24,7 +24,7 @@ const AboutMe = () => {
             <div className="w-2 aspect-square rounded-full bg-white box-glow" />
             <span>About me</span>
           </motion.h2>
-          <h1 className="font-semibold text-[36px] xs:text-[46px] md:text-[50px] tracking-tight flex flex-col leading-[44px] xs:leading-[52px] sm:leading-[60px] text-slate-200"> 
+          <h1 className="font-bold text-[36px] xs:text-[46px] md:text-[50px] tracking-tight flex flex-col leading-[44px] xs:leading-[52px] sm:leading-[60px] text-slate-200"> 
             <motion.span 
             variants={textVariants} 
             initial="hidden" 
@@ -47,24 +47,28 @@ const AboutMe = () => {
             <span className="sm:text-lg leading-[30px] tracking-wide sm:leading-[32px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eaque neque vitae reprehenderit totam nobis sapiente eius minus! Tempore numquam nobis hic consectetur? Fugit inventore, obcaecati fuga consequatur iure commodi.</span>
 
           </motion.div>
+          
+          <div className="w-full sm:w-[45%] relative"> 
+            <motion.div className="absolute bg-blue-950 top-4 left-0 w-full aspect-[3/4] blur-[20px]"/>
 
-          <div className="w-full sm:w-[45%] aspect-[3/4] relative mt-3 overflow-hidden rounded-lg">
-            <motion.div  
-            initial={{ scale: 1.03}} 
-            animate={{ scale:1 }} 
-            transition={{ delay: 1.5, duration:.5 }} 
-            style={{ y }}
-            className="w-full h-full relative z-0"
-            > 
-              <Image src={`/person.jpg`} alt="the creator" fill className="object-cover rounded-lg" />
-            </motion.div>
-            <motion.div 
-            initial={{ height:"100%" }}  
-            animate={{ height: "0%" }} 
-            transition={{ delay:1.5}} 
-            className="absolute top-0 left-0 w-full bg-primary z-[1] origin-bottom rounded-lg" />
-
+            <div className="w-full aspect-[3/4] relative mt-3 overflow-hidden rounded-lg">
+              <motion.div  
+              initial={{ scale: 1.03}} 
+              animate={{ scale:1 }} 
+              transition={{ delay: 1.5, duration:.5 }} 
+              style={{ y }}
+              className="w-full h-full relative z-0"
+              > 
+                <Image src={`/person.jpg`} alt="the creator" fill className="object-cover rounded-lg" />
+              </motion.div>
+              <motion.div 
+              initial={{ height:"100%" }}  
+              animate={{ height: "0%" }} 
+              transition={{ delay:1.5}} 
+              className="absolute top-0 left-0 w-full bg-primary z-[1] origin-bottom rounded-lg" />
+            </div>
           </div>
+
         </div>
       </div>
   )

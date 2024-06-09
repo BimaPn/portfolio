@@ -1,7 +1,10 @@
+import LoadingSpinner from "@/components/LoadingSpinner"
 
 const Loading = () => {
   return (
-    <div>Loading</div>
+    <div className="w-screen h-svh flexCenter"> 
+      <LoadingSpinner />
+    </div>
   )
 }
 

@@ -7,6 +7,7 @@ import { useRef, useState } from "react"
 import { PiArrowRightBold } from "react-icons/pi"
 import { splitText } from "@/utils/string"
 import { Laptop } from "./Laptop3D"
+import LinkTransition from "./LinkTransition"
 
 const variants = {
   hidden: {y:300, opacity: 0},
@@ -96,17 +97,16 @@ const Projects = () => {
                 className={`flex flex-col gap-[10px] py-3 lg:py-5`}
                 >
                   <div className="flexBetween"> 
-                    <Link href={`/projects/${project.slug}`}> 
+                    <LinkTransition href={`/projects/${project.slug}`} label={ 
                       <motion.span
                       className={`${project.id === currentProject ? "text-white" : "text-slate-500 hover:text-white"}
                       text-2xl xs:text-[28px] md:text-3xl lg:text-[34px] font-semibold origin-left`}
                       animate={{
-                        scale: project.id === currentProject ? 1.1 : 1,
-                        transition: { duration: .3, bounce: 0 }
-                        }}
+                      scale: project.id === currentProject ? 1.1 : 1,
+                      transition: { duration: .3, bounce: 0 }
+                      }}
                       >{project.title}</motion.span>
-                    </Link>
-
+                    } />
                       {project.id === currentProject && (
                         <div className="w-7 aspect-square flexCenter overflow-hidden">
                           <motion.div

@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import StarsBackground from "@/components/StarsBackground";
 import type { Metadata } from "next";
 
@@ -12,6 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <StarsBackground count={600}>{children}</StarsBackground> 
+    <> 
+      <StarsBackground count={600}>{children}</StarsBackground> 
+      <Footer />
+    </>
+
   );
 }

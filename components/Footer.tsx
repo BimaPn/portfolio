@@ -18,6 +18,7 @@ import {
 import Link from "next/link";
 import { socials } from "@/constants/socialMedia";
 import { PiArrowUpRightBold } from "react-icons/pi";
+import LinkTransition from "./LinkTransition";
 
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
@@ -61,7 +62,6 @@ const Footer = () => {
 
     <motion.section
       ref={containerRef}
-      id="contact"
       style={{
         opacity,
         backgroundImage
@@ -71,12 +71,12 @@ const Footer = () => {
 
     >
 
-      <div className="absolute left-0 bottom-0 right-0"> 
+      <div className="absolute left-0 bottom-0 right-0 z-[5]"> 
         <FooterSimple />
       </div>  
       <motion.div style={{ y }} className="relative z-10 flex flex-col items-center">
 
-        <h1 className="max-w-3xl text-center text-3xl font-semibold leading-tight text-white sm:text-5xl sm:leading-tight md:text-[50px] md:leading-tight">
+        <h1 className="max-w-3xl text-center text-3xl font-bold leading-tight text-white sm:text-5xl sm:leading-tight md:text-[50px] md:leading-tight">
 
         Let's Get in Touch 
 
@@ -147,7 +147,7 @@ export const FooterSimple = () => {
     <div className="absolute bottom-0 left-0 right-0 text-sm sm:text-[15px] text-white">
       <div className="w-full xl:w-[1440px] px-3 xs:px-6 sm:px-8 flexBetween sm:flex-row flex-col-reverse gap-3 py-4 sm:py-5 mx-auto">
         <div className="font-medium ">
-          <span>© 2024 <Link href={`/about`} className="font-semibold">Bima PN</Link>. Made with love ❤️</span>
+          <span>© 2024 <LinkTransition label={<span className="font-semibold">Bima Pn</span>} href="/about" />. Made with love ❤️</span>
         </div>
         <div className="flex items-center gap-5 sm:gap-7">
         {socials.map((social) => (

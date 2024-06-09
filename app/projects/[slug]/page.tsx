@@ -13,7 +13,7 @@ const Page = ({params}:Params) => {
     throw Error("Project not found")
   }
   return project && (
-    <section className="px-3 ss:px-6 sm:px-8 mt-16 sm:mt-24 pb-36 relative"> 
+    <section className="px-3 ss:px-6 sm:px-8 mt-16 sm:mt-24 relative"> 
       <Header videoSrc={videos[project.id-1]} title={project.title} color={colors[project.id-1]} />
       <Content />
     </section>  

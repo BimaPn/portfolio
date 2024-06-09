@@ -53,9 +53,11 @@ const Navbar = () => {
 const NavContent = ({activePage}:{activePage: string}) => {
   return (
     <nav className="w-full xl:w-[1440px] mx-auto flexBetween">
-      <div className="font-bold text-slate-200 text-[22px] xs:text-2xl">
-        <span>BimaP</span>
-      </div>
+      <LinkTransition label={  
+        <div className="font-bold text-slate-200 text-[22px] xs:text-2xl">
+          <span>BimaPN</span>
+        </div>
+      } href="/" />
       <div className="flex items-center">
         <ul className="hidden sm:flex items-center text-[17px] text-slate-400 font-semibold gap-7 lg:gap-8">
           <li className={`${activePage === "home" && "text-white"}`}> 

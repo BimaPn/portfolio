@@ -11,7 +11,7 @@ const HeroContent = () => {
   return (
           <div className="w-full flexCenter absolute top-[10%] sm:top-[15%] lg:top-[18%] left-0 px-4 xs:px-6 sm:px-8 md:px-14">
             <div className="boxWidth flex flex-col gap-3 sm:gap-5">
-              <div className="flex flex-col leading-[44px] xs:leading-[52px] sm:leading-[60px] font-bold text-[36px] xs:text-[46px] md:text-[50px] tracking-tight">
+              <div className="flex flex-col leading-[44px] xs:leading-[50px] sm:leading-[55px] font-bold text-[36px] xs:text-[46px] tracking-tight">
                 <div> 
                  <motion.span 
                  variants={textVariants} 

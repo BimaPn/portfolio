@@ -1,5 +1,5 @@
 "use client"
-import {  Vector3 } from "three"
+import {  SRGBColorSpace, Vector3 } from "three"
 import {  Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Environment, useGLTF } from '@react-three/drei'
 import { motion } from "framer-motion-3d"
@@ -65,7 +65,13 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
           <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
           <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
           <mesh geometry={nodes['Cube008_2'].geometry}> 
-            <meshBasicMaterial > 
+            <meshBasicMaterial 
+            toneMapped={false}
+            onUpdate={self => {  
+              self.needsUpdate = true
+              self.map!.colorSpace = SRGBColorSpace;
+              }}
+            > 
               {loading && <videoTexture  attach={`map`} args={[loadingVideoRef.current]}/>}
               {!loading && <videoTexture  attach={`map`} flipY={false} args={[videoRefs.current[0]]}/>}
             </meshBasicMaterial>

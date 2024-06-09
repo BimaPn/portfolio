@@ -83,11 +83,7 @@ const Footer = () => {
         </h1>
 
         <p className="mb-8 mt-4 max-w-xl text-center text-base leading-relaxed md:text-lg md:leading-relaxed">
-
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae, et,
-
-          distinctio eum impedit nihil ipsum modi.
-
+         I'm always excited to connect and collaborate on new projects. Let's create something amazing together.
         </p>
 
         <motion.button

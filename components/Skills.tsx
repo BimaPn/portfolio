@@ -32,7 +32,7 @@ const Skills = () => {
             <div className="w-2 aspect-square rounded-full bg-white -mb-[1px] box-glow" />
             <span>My skills</span>
           </motion.h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-12 mt-2 xs:mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 sm:gap-12 mt-2 xs:mt-4">
             {skills.map((skill) => (
               <div key={skill.name} className="flex flex-col xs:gap-1">
                 <div className="flex flex-col gap-2 pb-1 mb-2">
@@ -46,7 +46,7 @@ const Skills = () => {
                   transition={{ duration:.4 }} 
                   className="w-1/4 sm:w-1/4 border-t-2 border-primary origin-left" />
                 </div>
-                <motion.span variants={textVariants} transition={{ duration:.4, delay:.7 }}>{skill.description}</motion.span>
+                <motion.span variants={textVariants} transition={{ duration:.4, delay:.7 }} className="leading-[25px]">{skill.description}</motion.span>
               </div>
             ))}
           </div>

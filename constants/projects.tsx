@@ -1,30 +1,30 @@
 export const  colors = ["#172554","#3B0764", "#083344","#052E16"]
 
 const bindStacks = [
-    <span>- <a href="https://nextjs.org/" className="font-semibold">Nextjs</a> for the front-end</span>,
-    <span>- <a href="https://tailwindcss.com/" className="font-semibold">Tailwind CSS</a> for the styling</span>,
-    <span>- <a href="https://laravel.com/" className="font-semibold">Laravel</a> for the back-end</span>,
-    <span>- <a href="https://www.mysql.com/" className="font-semibold">Mysql</a> for the database</span>
+    <span>- <a href="https://nextjs.org/" className="font-semibold" target="_blank">Nextjs</a> for the front-end</span>,
+    <span>- <a href="https://tailwindcss.com/" className="font-semibold" target="_blank">Tailwind CSS</a> for the styling</span>,
+    <span>- <a href="https://laravel.com/" className="font-semibold" target="_blank">Laravel</a> for the back-end</span>,
+    <span>- <a href="https://www.mysql.com/" className="font-semibold" target="_blank">Mysql</a> for the database</span>
 ]
 
 const nexatalkStacks = [ 
-    <span>- <a href="https://nextjs.org/" className="font-semibold">Nextjs</a> for the front-end</span>,
-    <span>- <a href="https://tailwindcss.com/" className="font-semibold">Tailwind CSS</a> for the styling</span>,
-    <span>- <a href="https://nodejs.org/en" className="font-semibold">Node js</a> for the back-end</span>,
-    <span>- <a href="https://redis.io/" className="font-semibold">Redis</a> for the caching</span>,
-    <span>- <a href="https://www.mongodb.com/" className="font-semibold">MongoDB</a> for the database</span>
+    <span>- <a href="https://nextjs.org/" className="font-semibold" target="_blank">Nextjs</a> for the front-end</span>,
+    <span>- <a href="https://tailwindcss.com/" className="font-semibold" target="_blank">Tailwind CSS</a> for the styling</span>,
+    <span>- <a href="https://nodejs.org/en" className="font-semibold" target="_blank">Node js</a> for the back-end</span>,
+    <span>- <a href="https://redis.io/" className="font-semibold" target="_blank">Redis</a> for the caching</span>,
+    <span>- <a href="https://www.mongodb.com/" className="font-semibold" target="_blank">MongoDB</a> for the database</span>
 ]
 
 const digimartStacks = [ 
-    <span>- <a href="https://nextjs.org/" className="font-semibold">Nextjs</a> for the front-end</span>,
-    <span>- <a href="https://tailwindcss.com/" className="font-semibold">Tailwind CSS</a> for the styling</span>,
+    <span>- <a href="https://nextjs.org/" className="font-semibold" target="_blank">Nextjs</a> for the front-end</span>,
+    <span>- <a href="https://tailwindcss.com/" className="font-semibold" target="_blank">Tailwind CSS</a> for the styling</span>,
 ]
 
 const europarkStacks = [ 
-    <span>- <a href="https://nextjs.org/" className="font-semibold">Nextjs</a> for the front-end</span>,
-    <span>- <a href="https://tailwindcss.com/" className="font-semibold">Tailwind CSS</a> for the styling</span>,
-    <span>- <a href="https://laravel.com/" className="font-semibold">Laravel</a> for the back-end</span>,
-    <span>- <a href="https://www.mysql.com/" className="font-semibold">Mysql</a> for the database</span>
+    <span>- <a href="https://nextjs.org/" className="font-semibold" target="_blank">Nextjs</a> for the front-end</span>,
+    <span>- <a href="https://tailwindcss.com/" className="font-semibold" target="_blank">Tailwind CSS</a> for the styling</span>,
+    <span>- <a href="https://laravel.com/" className="font-semibold" target="_blank">Laravel</a> for the back-end</span>,
+    <span>- <a href="https://www.mysql.com/" className="font-semibold" target="_blank">Mysql</a> for the database</span>
 ]
 
 export const projects = [

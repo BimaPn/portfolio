@@ -8,6 +8,7 @@ import { PiArrowRightBold } from "react-icons/pi"
 import { splitText } from "@/utils/string"
 import { Laptop } from "./Laptop3D"
 import LinkTransition from "./LinkTransition"
+import { textVariants } from "@/constants/framer"
 
 const variants = {
   hidden: {y:300, opacity: 0},
@@ -75,19 +76,18 @@ const Projects = () => {
 
         <div className="w-full sm:w-[40%] flexCenter px-3 py-4">
           <div className="flex flex-col">
-            <motion.div 
-            variants={parentVariant} className="text-sm xs:text-base sm:text-sm md:text-base" transition={{ staggerChildren: 0.02 }}> 
-              {splitText("Selected project 🖥️").map((char, index) => (
-                <motion.span 
-                transition={{ duration:0.7 }} 
-                variants={variants} 
-                key={index}
-                className="font-medium"
-                >
-                {char} 
-                </motion.span>
-              ))} 
-            </motion.div>
+
+
+
+          <motion.h2 
+          variants={textVariants} 
+          transition={{ duration:.4}} 
+          className="flex items-center gap-3 font-semibold tracking-tight text-slate-400" 
+          > 
+            <div className="w-2 aspect-square rounded-full bg-white box-glow" />
+            <span>Selected project</span>
+          </motion.h2>
+
             <motion.div variants={parentVariant} transition={{ staggerChildren:.05 }} className="flex flex-col">
               {projects.map((project) => (
                 <motion.div 

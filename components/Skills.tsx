@@ -46,7 +46,7 @@ const Skills = () => {
                   transition={{ duration:.4 }} 
                   className="w-1/4 sm:w-1/4 border-t-2 border-primary origin-left" />
                 </div>
-                <motion.span variants={textVariants} transition={{ duration:.4, delay:.7 }} className="leading-[25px]">{skill.description}</motion.span>
+                <motion.span variants={textVariants} transition={{ duration:.4, delay:.7 }} className="leading-[28px] text-slate-300 tracking-wide">{skill.description}</motion.span>
               </div>
             ))}
           </div>

@@ -5,7 +5,7 @@ import { textVariants } from "@/constants/framer"
 
 const title = "Hi, I'm Bima 👋"
 const highlight = "Fullstack Developer"
-const description = "I create dynamic and responsive web applications by solving complex problems with elegant and user-friendly solutions."
+const description = "I'm passionate about creating dynamic and responsive web applications."
 
 const HeroContent = () => {
   return (

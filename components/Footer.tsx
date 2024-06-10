@@ -86,8 +86,9 @@ const Footer = () => {
          I'm always excited to connect and collaborate on new projects. Let's create something amazing together.
         </p>
 
-        <motion.button
-
+        <motion.a
+          href="mailto:bimaptr12@gmail.com?subject=Hi%20Bima,%20I'd%20like%20to%20hire%20you"
+          target="_blank"
           style={{
 
             border,
@@ -116,7 +117,7 @@ const Footer = () => {
 
           <FiArrowRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
 
-        </motion.button>
+        </motion.a>
 
       </motion.div>
 

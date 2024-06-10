@@ -1,14 +1,14 @@
 export const socials = [
   {
-    link: "https://github.com",
+    link: "https://github.com/BimaPn",
     label: "Github"
   },
   {
-    link: "https://linkedin.com",
+    link: "https://www.linkedin.com/in/bimapn12/",
     label: "LinkedIn"
   },
   {
-    link: "https://instagram.com",
+    link: "https://www.instagram.com/bimapn000",
     label: "instagram"
   },
 ]

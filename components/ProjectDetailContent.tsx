@@ -166,7 +166,7 @@ export const Content = ({...props}:{previewImages: string[], demoLink: string, c
         className="flex items-center gap-[6px] font-semibold text-slate-400 hover:scale-105 hover:text-white transition-transform"
         > 
           <FaGithub className="text-[19px]" />
-          <span>View code</span>
+          <span>View repo</span>
         </a>
       </div>  
       <Content1 overview={props.overview} imagePreview={props.previewImages[0]} /> 

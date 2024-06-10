@@ -3,7 +3,7 @@ import HeroModel from "./HeroModel"
 
 const Hero = () => {
   return (
-     <div id="home" className="w-full h-[110vh] xs:h-screen bg-semiDark pt-[194px] sm:pt-0 relative z-[1]">
+     <div id="home" className="w-full h-[110svh] xs:h-screen bg-semiDark pt-[194px] sm:pt-0 relative z-[1]">
         <HeroContent />
         <HeroModel />
     </div> 

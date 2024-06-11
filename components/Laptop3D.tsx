@@ -44,6 +44,7 @@ const Laptop3D = ({currentVideo=1}:{currentVideo: number}) => {
     
     if (!loadingVideoRef.current) {
       const loadingVid = videoElement('/videos/loading.mp4');
+      loadingVid.play()
       loadingVideoRef.current = loadingVid;
     }
     return () => {

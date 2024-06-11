@@ -41,6 +41,7 @@ const Laptop3D = ({videoSrc}:{videoSrc: string}) => {
     
     if (!loadingVideoRef.current) {
       const loadingVid = videoElement('/videos/loading.mp4');
+      loadingVid.play()
       loadingVideoRef.current = loadingVid;
     }
 

@@ -8,8 +8,8 @@ const openSans = Open_Sans({ subsets:["latin"],weight:["400","500", "600", "700"
 const bitter = Bitter({ subsets:["latin"],weight:["400","500", "600", "700"],variable: "--font-bitter"})
 
 export const metadata: Metadata = {
-  title: "Bima Putra",
-  description: "Portfolio Created By Bima Putra",
+  title: "Bima PN",
+  description: "Portfolio Created By Bima PN",
 };
 
 export default function RootLayout({

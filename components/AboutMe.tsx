@@ -6,7 +6,7 @@ import { useRef } from "react"
 
 const paragraph1 = ( 
   <span> 
-  Hi, I am a dedicated and creative <span className="font-medium text-white">full-stack developer</span> based in <span className="font-medium text-white">Indonesia</span>. With a passion for both frontend and backend development, I thrive on building comprehensive and innovative web solutions. My expertise spans across a variety of technologies, allowing me to tackle complex challenges and deliver exceptional results.
+  Hi, I am a dedicated and creative <span className="font-medium text-white">Web Developer</span> ith a passion for both <span className="font-medium text-white">Front-end</span> and <span className="font-medium text-white">Back-end</span> development, I thrive on building comprehensive and innovative web solutions. My expertise spans across a variety of technologies, allowing me to tackle complex challenges and deliver exceptional results.
   </span> 
 )
 

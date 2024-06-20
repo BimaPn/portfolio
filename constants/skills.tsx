@@ -10,7 +10,7 @@ export const skills = [
     name: "Back-end",
     description: ( 
       <span> 
-      I create and manage robust server-side applications with <a href="https://nodejs.org/en" className="font-semibold text-white" target="_blank">Node js</a>, <a href="https://laravel.com/" className="font-semibold text-white" target="_blank">Laravel</a>, <a href="https://www.mongodb.com/" className="font-semibold text-white" target="_blank">MongoDB</a>, <a href="https://www.mysql.com/" className="font-semibold text-white" target="_blank">MySQL</a>, and <a href="https://redis.io/" className="font-semibold text-white" target="_blank">Redis</a>, focusing on performance, security, and efficient data.
+      I create and manage robust server-side applications with <a href="https://nodejs.org/en" className="font-semibold text-white" target="_blank">Node js</a>, <a href="https://expressjs.com/" className="font-semibold text-white" target="_blank">Express</a>, <a href="https://laravel.com/" className="font-semibold text-white" target="_blank">Laravel</a>, <a href="https://www.mongodb.com/" className="font-semibold text-white" target="_blank">MongoDB</a>, <a href="https://www.mysql.com/" className="font-semibold text-white" target="_blank">MySQL</a>, and <a href="https://redis.io/" className="font-semibold text-white" target="_blank">Redis</a>, focusing on performance, security, and efficient data.
       </span>
     ),
   },

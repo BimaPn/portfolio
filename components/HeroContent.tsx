@@ -4,13 +4,13 @@ import { splitText } from "@/utils/string"
 import { textVariants } from "@/constants/framer"
 
 const title = "Hi, I'm Bima 👋"
-const highlight = "Fullstack Developer"
+const highlight = "Web Developer"
 const description = "I'm passionate about creating dynamic and responsive web applications."
 
 const HeroContent = () => {
   return (
           <div className="w-full flexCenter absolute top-[10%] sm:top-[15%] lg:top-[18%] left-0 px-4 xs:px-6 sm:px-8 md:px-14">
-            <div className="boxWidth flex flex-col gap-4">
+            <div className="boxWidth flex flex-col gap-3">
               <div className="flex flex-col leading-[44px] xs:leading-[50px] sm:leading-[55px] font-bold text-[36px] xs:text-[46px] tracking-tight">
                 <div> 
                  <motion.span 
@@ -28,7 +28,7 @@ const HeroContent = () => {
                   animate="show" 
                   transition={{ delay:.2, duration:.4 }} 
                   className="inline-block" 
-                  >A <span className="text-white text-glow-sm">Fullstack Developer</span> 
+                  >A <span className="text-white text-glow-sm">Web Developer</span> 
                   </motion.span>
                 </div>
               </div>

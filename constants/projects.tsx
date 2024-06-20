@@ -10,7 +10,8 @@ const bindStacks = [
 const nexatalkStacks = [ 
     <span>- <a href="https://nextjs.org/" className="font-semibold" target="_blank">Nextjs</a> for the front-end</span>,
     <span>- <a href="https://tailwindcss.com/" className="font-semibold" target="_blank">Tailwind CSS</a> for the styling</span>,
-    <span>- <a href="https://nodejs.org/en" className="font-semibold" target="_blank">Node js</a> for the back-end</span>,
+    <span>- <a href="https://nodejs.org/en" className="font-semibold" target="_blank">Node js</a> for the server</span>,
+    <span>- <a href="https://nodejs.org/en" className="font-semibold" target="_blank">Express</a> for the back-end</span>,
     <span>- <a href="https://redis.io/" className="font-semibold" target="_blank">Redis</a> for the caching</span>,
     <span>- <a href="https://www.mongodb.com/" className="font-semibold" target="_blank">MongoDB</a> for the database</span>
 ]
@@ -37,7 +38,7 @@ export const projects = [
     description: "A social media platform designed to bring people closer together and offers a seamless and engaging experience.",
     demoLink: "https://bind-app-demo.vercel.app",
     codeLink: "https://github.com/BimaPn/bind-client.git",
-    overview: "Bind is a full-stack social media platform featuring real-time chat, notifications, media posting, and group creation/joining capabilities and more. Developed with React using Next.js for the frontend and Laravel for the backend API, with styling implemented using Tailwind CSS, Bind offers seamless user interaction and content sharing. It showcases modern web development skills, emphasizing user engagement and responsive design.",
+    overview: "Bind is a social media platform featuring real-time chat, notifications, media posting, and group creation/joining capabilities and more. Developed with React using Next.js for the frontend and Laravel for the backend API, with styling implemented using Tailwind CSS, Bind offers seamless user interaction and content sharing. It showcases modern web development skills, emphasizing user engagement and responsive design.",
     role: "Front-end",
     stacks: bindStacks
   },
@@ -48,7 +49,7 @@ export const projects = [
     type: "Web Application",
     previewImages: ["/projects/previews/nexatalk_lg.png", "/projects/previews/nexatalk_sm.png"],
     description: "A real-time chat application designed to provide seamless and instant communication.",
-    overview: "NexaTalk is a real-time chat web application built using React, Next.js, and Tailwind CSS for the frontend, and Node.js, Redis, and MongoDB for the backend.  Integrated with websockets, NexaTalk ensures instant and reliable real-time functionality, making it ideal for dynamic and responsive chat experiences.",
+    overview: "NexaTalk is a real-time chat web application built using React, Next.js, and Tailwind CSS for the frontend, and Node.js, Express, Redis, and MongoDB for the backend.  Integrated with websockets, NexaTalk ensures instant and reliable real-time functionality, making it ideal for dynamic and responsive chat experiences.",
     demoLink: "https://nexatalk-demo.vercel.app",
     codeLink: "https://github.com/BimaPn/nexatalk-client.git",
     role: "Full-stack",
